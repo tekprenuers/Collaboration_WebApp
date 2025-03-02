@@ -1,5 +1,6 @@
 import { Footer } from "./footer";
 import { Header } from "./header";
+import LoginAndSignup from "./LoginAndSignup";
 
 const withHeaderAndFooter = <P extends object>(
   WrappedComponent: React.ComponentType<P>
@@ -11,6 +12,7 @@ const withHeaderAndFooter = <P extends object>(
         <WrappedComponent {...props} />
       </main>
       <Footer />
+      <LoginAndSignup />
     </div>
   );
 };
