@@ -2,12 +2,12 @@ import img from "./../../assets/vector-illustration/about1.png"
 import cloudImg from "./../../assets/vector-illustration/Cloud1.png.png"
 import cloudImgTwo from "./../../assets/vector-illustration/Cloud1.png.png"
 
-const AboutHeadery = () => {
+const AboutHeadery:React.FC = () => {
   return (
     <div className="text-[#000000B0] mt-[3rem] md:mt-[5rem] ">
       <div className="text-[#000000B0] text-center">
-        <h3 className="text-[#003366] font-medium">ABOUT HEADERFY</h3>
-        <h1 className=" text-[#003366] text-[2rem] font-bold">WHO WE <span className="text-[#FF5733]">ARE!</span></h1>
+        <h3 className="text-[#003366] font-bold font-poppins">ABOUT HEADERFY</h3>
+        <h1 className=" text-[#003366] text-[2rem] font-bold font-poppins">WHO WE <span className="text-[#FF5733]">ARE!</span></h1>
         <p className="md:text-[1.2rem]">Enjoy the moment, as we take you through our history team and vision.</p>
       </div>
       <div className="w-full flex flex-col md:flex-row gap-[2rem] md:gap-0 justify-between mt-[3rem] md:mt-[9rem]">

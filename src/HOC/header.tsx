@@ -109,7 +109,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import HLogo from "../assets/vector-illustration/Heady.png";
 
 const NavigationLink = [
-  { path: "/home", label: "Home" },
+  { path: "/", label: "Home" },
   { path: "/template", label: "Templates" },
   { path: "/pricing", label: "Pricing" },
   { path: "/learn", label: "Learn" },
