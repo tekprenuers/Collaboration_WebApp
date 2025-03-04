@@ -8,7 +8,7 @@ import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
 
 const ForgotPassword: React.FC = () => {
-    const [email, setEmail] = useState<string>("");
+    const [, setEmail] = useState<string>("");
     const navigate = useNavigate()
 
     const handleBackToLogin = () => {

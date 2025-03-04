@@ -1,17 +1,17 @@
 import React, { useState } from "react";
 import { IoIosArrowBack } from "react-icons/io";
-import { useLocation, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { Eye, EyeOff } from "lucide-react";
-import { toast } from "react-toastify";
+// import { toast } from "react-toastify";
 
 
 const ResetPassword: React.FC = () => {
   const [showPassword, setShowPassword] = useState<boolean>(false);
-  const [password, setPassword] = useState<string>("");
-  const [confirmPassword, setConfirmPassword] = useState<string>("");
-  const location = useLocation();
+  const [, setPassword] = useState<string>("");
+  // const [confirmPassword, setConfirmPassword] = useState<string>("");
+  // const location = useLocation();
   const navigate = useNavigate();
-  const email = location.state?.email;
+  // const email = location.state?.email;
 
   const handleBackToLogin = () => {
     navigate("/login");

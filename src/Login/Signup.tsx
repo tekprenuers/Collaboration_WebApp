@@ -8,8 +8,8 @@ import { useLocation, useNavigate } from "react-router-dom";
 
 const Register: React.FC = () => {
   const [showPassword, setShowPassword] = useState(false);
-  const [fname, setFname] = useState<string>("");
-  const [lname, setLname] = useState<string>("");
+  const [, setFname] = useState<string>("");
+  const [, setLname] = useState<string>("");
   const navigate = useNavigate();
   const location = useLocation();
   const isSignup = location.pathname === "/signup";
