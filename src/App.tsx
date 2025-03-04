@@ -1,4 +1,4 @@
-import React from 'react'
+import React from "react";
 import {
   createBrowserRouter,
   createRoutesFromElements,
@@ -6,19 +6,18 @@ import {
   Navigate,
   RouterProvider,
 } from "react-router-dom";
-import Login from './Login/Login';
-import { ToastContainer } from 'react-toastify';
+import Login from "./Login/Login";
+import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import ForgotPassword from './Login/ForgotPassword';
-import Signup from './Login/Signup';
-import VerifyCode from './Login/VerifyCode';
-import ResetPassword from './Login/ResetPassword';
-import AuthLayout from './Layout/AuthLayout';
-import Home from './Components/Home/Home';
-import Templates from './Components/Templates/Templates';
-import TemplateDetails from './Components/Templates/TemplateDetails';
-import Pricing from './Components/Pricing/Pricing';
-
+import ForgotPassword from "./Login/ForgotPassword";
+import Signup from "./Login/Signup";
+import VerifyCode from "./Login/VerifyCode";
+import ResetPassword from "./Login/ResetPassword";
+import AuthLayout from "./Layout/AuthLayout";
+import Home from "./Components/Home/Home";
+import Templates from "./Components/Templates/Templates";
+import TemplateDetails from "./Components/Templates/TemplatesDetails/TemplateDetails";
+import Pricing from "./Components/Pricing/Pricing";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -42,13 +41,13 @@ const router = createBrowserRouter(
   )
 );
 
-const App:React.FC = () => {
+const App: React.FC = () => {
   return (
     <>
       <RouterProvider router={router} />
       <ToastContainer />
     </>
   );
-}
+};
 
-export default App
+export default App;

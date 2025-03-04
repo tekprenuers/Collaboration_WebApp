@@ -1,7 +1,9 @@
 import React from "react";
 import { useParams } from "react-router-dom";
-import withHeaderAndFooter from "../../HOC/withHeaderAndFooter";
-import Breadcrumb from "../../BreadCrumb/BreadCrumb";
+import withHeaderAndFooter from "../../../HOC/withHeaderAndFooter";
+import Breadcrumb from "../../../BreadCrumb/BreadCrumb";
+import TemplateDetails_Bnr_1 from "./TemplateDetails_Bnr_1";
+import TemplatesDetails_Bnr_2 from "./TemplatesDetails_Bnr_2";
 
 const templates = [
   {
@@ -57,20 +59,11 @@ const TemplateDetails: React.FC = () => {
   }
 
   return (
-    <section>
+    <section className="p-6">
       {" "}
-      <div className="p-6">
-        <Breadcrumb /> {/* Show breadcrumb only on this page */}
-        <h1 className="text-2xl font-bold">{template.name}</h1>
-        <img
-          src={template.image}
-          alt={template.name}
-          className="w-1/2 mx-auto my-4"
-        />
-        <p className="text-gray-600">
-          This is a preview of the {template.name}.
-        </p>
-      </div>
+      <Breadcrumb />
+      <TemplateDetails_Bnr_1 name={template.name} image={template.image} />
+      <TemplatesDetails_Bnr_2 />
     </section>
   );
 };
