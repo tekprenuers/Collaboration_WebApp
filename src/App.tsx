@@ -9,15 +9,16 @@ import {
 import Login from "./Login/Login";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import ForgotPassword from "./Login/ForgotPassword";
-import Signup from "./Login/Signup";
-import VerifyCode from "./Login/VerifyCode";
-import ResetPassword from "./Login/ResetPassword";
-import AuthLayout from "./Layout/AuthLayout";
-import Home from "./Components/Home/Home";
-import Templates from "./Components/Templates/Templates";
-import TemplateDetails from "./Components/Templates/TemplatesDetails/TemplateDetails";
-import Pricing from "./Components/Pricing/Pricing";
+import ForgotPassword from './Login/ForgotPassword';
+import Signup from './Login/Signup';
+import VerifyCode from './Login/VerifyCode';
+import ResetPassword from './Login/ResetPassword';
+import AuthLayout from './Layout/AuthLayout';
+import Home from './Components/Home/Home';
+import Templates from './Components/Templates/Templates';
+import TemplateDetails from './Components/Templates/TemplateDetails';
+import Pricing from './Components/Pricing/Pricing';
+
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -30,10 +31,12 @@ const router = createBrowserRouter(
         <Route path="reset-password" element={<ResetPassword />} />
       </Route>
 
-      <Route path="home" element={<Home />} />
+      <Route path="/" element={<Home />} />
       <Route path="template" element={<Templates />} />
-      <Route path="template/:templatePath" element={<TemplateDetails />} />
+      <Route path="template/:templatePath" element={<TemplateDetails />} /> 
       <Route path="pricing" element={<Pricing />} />
+      <Route path='learn' element={<Learn />}/>
+      <Route path='about' element={<About />}/>
 
       {/* Redirect unknown routes to Login */}
       <Route path="*" element={<Navigate to="/login" replace />} />

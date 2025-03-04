@@ -113,7 +113,7 @@ const NavigationLink = [
   { path: "/template", label: "Templates" },
   { path: "/pricing", label: "Pricing" },
   { path: "/learn", label: "Learn" },
-  { path: "/About", label: "About Us" },
+  { path: "/about", label: "About Us" },
 ];
 
 export const Header: React.FC = () => {
@@ -124,7 +124,7 @@ export const Header: React.FC = () => {
   const handleSignup = () => navigate("/signup");
 
   return (
-    <header className="w-full bg-[#003366] text-white py-4 px-6 flex md:justify-evenly justify-between items-center relative">
+    <header className="w-full bg-[#003366] text-white py-4 px-6 flex md:justify-evenly justify-between items-center relative max-w-[1600px] mx-auto">
       {/* Logo */}
       <div className="flex items-center">
         <img src={HLogo} alt="Headerfly Logo" className="object-contain" />
