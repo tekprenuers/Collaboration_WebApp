@@ -1,5 +1,6 @@
 import withHeaderAndFooter from "../../HOC/withHeaderAndFooter"
 import AboutHeadery from "./AboutHeadery"
+import Map from "./Map"
 import OurStory from "./OurStory"
 import OurVision from "./OurVission"
 import WhoWeAre from "./WhoWeAre"
@@ -10,6 +11,7 @@ const About = () => {
             <AboutHeadery />
             <OurStory />
             <WhoWeAre />
+            <Map />
             <OurVision />
         </div>
     )

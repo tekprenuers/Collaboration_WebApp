@@ -10,7 +10,7 @@ const OurStory = () => {
     <div className="mt-[2rem]">
         <h1 className=" text-center text-[#003366] text-[2rem] font-bold">Our <span className="text-[#FF5733]">Story</span></h1>
         <img src={treeTop} alt="Image" className="mx-auto mt-[-2rem]"/>
-        <div className="flex flex-col md:flex-row max-w-[50rem] mx-auto md:gap-4 md:pl-[9rem] ">
+        <div className="flex flex-col md:flex-row max-w-[50rem] mx-auto md:gap-4 md:pl-[9rem] mb-[3rem] md:mb-0">
             <div className=" flex flex-col gap-[1rem]">
                 <div className="flex gap-4">
                     <img src={svgOne} alt="Image" />
@@ -29,7 +29,7 @@ const OurStory = () => {
                     <p>3.5 million users in 133 countries</p>
                 </div>
             </div>
-            <img src={tree} alt="Image" className="md:ml-[-8rem] mt-[-1.5rem]" />
+            <img src={tree} alt="Image" className="hidden md:block md:ml-[-8rem] mt-[-1.5rem]" />
         </div>
 
     </div>
