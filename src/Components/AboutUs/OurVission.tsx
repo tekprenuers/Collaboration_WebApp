@@ -24,7 +24,7 @@ const OurVision = () => {
                 </div>
             </div>
             <img src={cloudImg} alt="Image" className="absolute hidden sm:block left-[0] lg:left-[7rem] bottom-[-1rem]" />
-            <img src={cloudImgSmall} alt="Image" className="absolute hidden sm:block right-0 lg:right-[7rem] top-[5rem] z-10" />
+            <img src={cloudImgSmall} alt="Image" className="absolute hidden md:block right-0 lg:right-[7rem] top-[5rem] z-10" />
         </div>
     )
 }

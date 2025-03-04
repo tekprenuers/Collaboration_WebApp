@@ -35,8 +35,8 @@ const WhoWeAre = () => {
                 <IoIosArrowDropdownCircle className="text-[#FF5733] text-[2rem] text-center mx-auto " />
             </div>
             <img src={cloudImg} alt="Image" className="absolute hidden sm:block left-[0] lg:left-[7rem] bottom-[2rem]" />
-            <img src={cloudImgTwo} alt="Image" className="absolute hidden sm:block right-0 lg:right-[7rem] top-[-2rem] z-10" />
-            <img src={cloudImgSmall} alt="Image" className="absolute hidden sm:block right-0 lg:right-[7rem] top-[3rem] z-10" />
+            <img src={cloudImgTwo} alt="Image" className="absolute hidden md:block right-0 lg:right-[7rem] top-[-2rem] z-10" />
+            <img src={cloudImgSmall} alt="Image" className="absolute hidden md::block right-0 lg:right-[7rem] top-[3rem] z-10" />
         </div>
     )
 }
