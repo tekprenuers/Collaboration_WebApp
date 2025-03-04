@@ -8,7 +8,7 @@ type listUsed = {
     title: string;
     desc: string;
 }
-const LearnBodyOne = () => {
+const LearnBodyOne:React.FC = () => {
 
     const list: listUsed[] = [
         { id: 1, src: "https://youtu.be/LDB4uaJ87e0?si=PZyM8B-E3FaZIl4U", title: "Headerfy video Tutorials", desc: "watch videos on how to use headerfy" },
@@ -18,7 +18,7 @@ const LearnBodyOne = () => {
 
 
     return (
-        <div className="text-[#333333] flex flex-col gap-[1rem] p-[2.5rem] my-[2rem] mt-[3rem] shadow-xl shadow-[#0000002a]">
+        <div className="text-[#333333] flex flex-col gap-[1rem] p-[2.5rem] my-[2rem] mt-[3rem] shadow-xl rounded-tl-4xl rounded-br-4xl shadow-[#0000002a]">
             <h1 className=" text-[1.7rem]">Free Educational Resources</h1>
             <div className=" flex flex-col md:flex-row justify-between gap-[1rem]">
                 

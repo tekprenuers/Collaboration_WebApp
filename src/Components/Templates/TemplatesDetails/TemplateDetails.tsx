@@ -4,6 +4,8 @@ import withHeaderAndFooter from "../../../HOC/withHeaderAndFooter";
 import Breadcrumb from "../../../BreadCrumb/BreadCrumb";
 import TemplateDetails_Bnr_1 from "./TemplateDetails_Bnr_1";
 import TemplatesDetails_Bnr_2 from "./TemplatesDetails_Bnr_2";
+import TemplateDetails_Bnr_4 from "./TemplateDetails_Bnr_4";
+import TemplateDetails_Bnr_3 from "./TemplateDetails_Bnr_3";
 
 const templates = [
   {
@@ -64,6 +66,8 @@ const TemplateDetails: React.FC = () => {
       <Breadcrumb />
       <TemplateDetails_Bnr_1 name={template.name} image={template.image} />
       <TemplatesDetails_Bnr_2 />
+      <TemplateDetails_Bnr_3 />
+      <TemplateDetails_Bnr_4 />
     </section>
   );
 };
