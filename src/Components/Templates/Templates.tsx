@@ -8,7 +8,7 @@ import Template_head from './Template_head';
 const Templates:React.FC = () => {
   return (
     <>
-      <div className="overflow-hidden">
+      <div className="overflow-hidden max-w-[1600px] mx-auto">
         <Template_head />
         <Template_body />
       </div>

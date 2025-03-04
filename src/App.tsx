@@ -17,7 +17,9 @@ import AuthLayout from './Layout/AuthLayout';
 import Home from './Components/Home/Home';
 import Templates from './Components/Templates/Templates';
 import TemplateDetails from './Components/Templates/TemplateDetails';
+import Learn from './Components/Learn/Learn';
 import Pricing from './Components/Pricing/Pricing';
+import About from './Components/AboutUs/About';
 
 
 const router = createBrowserRouter(
@@ -31,10 +33,12 @@ const router = createBrowserRouter(
         <Route path="reset-password" element={<ResetPassword />} />
       </Route>
 
-      <Route path="home" element={<Home />} />
+      <Route path="/" element={<Home />} />
       <Route path="template" element={<Templates />} />
-      <Route path="template/:templatePath" element={<TemplateDetails />} />
+      <Route path="template/:templatePath" element={<TemplateDetails />} /> 
       <Route path="pricing" element={<Pricing />} />
+      <Route path='learn' element={<Learn />}/>
+      <Route path='about' element={<About />}/>
 
       {/* Redirect unknown routes to Login */}
       <Route path="*" element={<Navigate to="/login" replace />} />

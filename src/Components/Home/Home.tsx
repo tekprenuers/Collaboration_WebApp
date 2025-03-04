@@ -7,7 +7,7 @@ import Banner_3 from './Banner_3';
 const Home: React.FC = () => {
   return (
     <>
-      <div className='overflow-hidden'>
+      <div className='overflow-hidden max-w-[1600px] mx-auto'>
         <Banner_1 />
         <Banner_2 />
         <Banner_3 />

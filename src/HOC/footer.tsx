@@ -10,7 +10,7 @@ import {
 
 export const Footer: React.FC = () => {
   return (
-    <footer className="w-full bg-[#003366] text-white py-10 px-6 lg:0 pt-20">
+    <footer className="w-full bg-[#003366] text-white py-10 px-6 lg:0 pt-20 max-w-[1600px] mx-auto">
       {/* Top Section */}
       <div className="lg:max-w-7xl max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3">
         {/* Left - Logo & Contact */}

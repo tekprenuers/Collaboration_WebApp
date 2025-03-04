@@ -82,7 +82,7 @@ const TemplateBody: React.FC = () => {
   const [selectedOption, setSelectedOption] = useState<string | null>(null);
 
 
-    const handleSelect = (category : "industry" | "role", option : string) => {
+  const handleSelect = (category: "industry" | "role", option: string) => {
     setSelectedTab(category);
     setSelectedOption(option);
     setDropdownOpen(null);
@@ -96,11 +96,10 @@ const TemplateBody: React.FC = () => {
           {/* Industry & Role Header */}
           <div className="flex space-x-10 mb-4">
             <div
-              className={`flex flex-col items-center cursor-pointer ${
-                activeTab === "industry"
+              className={`flex flex-col items-center cursor-pointer ${activeTab === "industry"
                   ? "text-[#FF5733] font-bold"
                   : "text-[#000000b0]"
-              }`}
+                }`}
               onClick={() => setActiveTab("industry")}
             >
               <img
@@ -116,11 +115,10 @@ const TemplateBody: React.FC = () => {
             </div>
 
             <div
-              className={`flex flex-col items-center cursor-pointer ${
-                activeTab === "role"
+              className={`flex flex-col items-center cursor-pointer ${activeTab === "role"
                   ? "text-[#FF5733] font-bold"
                   : "text-[#000000b0]"
-              }`}
+                }`}
               onClick={() => setActiveTab("role")}
             >
               <img
@@ -180,7 +178,7 @@ const TemplateBody: React.FC = () => {
 
 
 
-      
+
 
       {/*Small screen-------------------------------------------------------------------*/}
 
@@ -197,11 +195,10 @@ const TemplateBody: React.FC = () => {
         <div className="flex gap-2 mb-3 relative">
           {/* Industry Button */}
           <button
-            className={`flex items-center justify-between p-3 w-36  rounded-md shadow-md ${
-              selectedTab === "industry"
+            className={`flex items-center justify-between p-3 w-36  rounded-md shadow-md ${selectedTab === "industry"
                 ? " text-orange-600"
                 : "bg-white border-gray-300"
-            }`}
+              }`}
             onClick={() =>
               setDropdownOpen(dropdownOpen === "industry" ? null : "industry")
             }
@@ -217,9 +214,8 @@ const TemplateBody: React.FC = () => {
                 className="w-5 h-5"
               />
               <span
-                className={`font-medium text-gray-700 ${
-                  selectedTab === "industry" ? "text-orange-600" : ""
-                }`}
+                className={`font-medium text-gray-700 ${selectedTab === "industry" ? "text-orange-600" : ""
+                  }`}
               >
                 Industry
               </span>
@@ -231,11 +227,10 @@ const TemplateBody: React.FC = () => {
 
           {/* Role Button */}
           <button
-            className={`flex items-center justify-between p-3 w-36 rounded-md shadow-md ${
-              selectedTab === "role"
+            className={`flex items-center justify-between p-3 w-36 rounded-md shadow-md ${selectedTab === "role"
                 ? "text-orange-600"
                 : "bg-white border-gray-300"
-            }`}
+              }`}
             onClick={() =>
               setDropdownOpen(dropdownOpen === "role" ? null : "role")
             }
@@ -249,9 +244,8 @@ const TemplateBody: React.FC = () => {
                 className="w-5 h-5"
               />
               <span
-                className={`font-medium text-gray-700 ${
-                  selectedTab === "role" ? "text-orange-600" : ""
-                }`}
+                className={`font-medium text-gray-700 ${selectedTab === "role" ? "text-orange-600" : ""
+                  }`}
               >
                 Role
               </span>
@@ -322,5 +316,4 @@ export default TemplateBody;
 
 
 
- 
-  
+

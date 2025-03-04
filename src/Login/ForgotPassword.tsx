@@ -4,7 +4,7 @@ import { FcGoogle } from "react-icons/fc";
 import { FaApple } from "react-icons/fa";
 import { IoIosArrowBack } from "react-icons/io";
 import { useNavigate } from "react-router-dom";
-import { toast } from "react-toastify";
+//import { toast } from "react-toastify";
 import { motion } from "framer-motion";
 
 const ForgotPassword: React.FC = () => {
@@ -42,7 +42,7 @@ const ForgotPassword: React.FC = () => {
     // };
 
   return (
-    <div className="w-full max-w-xl p-5 lg:mt-14 lg:p-8">
+    <div className="w-full max-w-xl p-5 lg:mt-14 lg:p-8 ">
       {/* Large Screen Gradient */}
       <div className="custom-gradient hidden sm:block"></div>
       {/* Small Screen Gradient */}
