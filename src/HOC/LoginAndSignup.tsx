@@ -7,7 +7,7 @@ const LoginAndSignup: React.FC = () => {
   const handleSignup = () => navigate("/signup");
 
   return (
-    <div className="fixed bottom-0 w-full bg-white p-5 flex flex-col items-center space-y-4 shadow-md md:hidden lg:hidden max-w-[1600px] mx-auto">
+    <div className="sticky bottom-0  w-full bg-white p-5 flex flex-col items-center space-y-4 shadow-md md:hidden lg:hidden max-w-[1600px] mx-auto">
       <button
         onClick={handleLogin}
         className="hover:text-[#ff5733] text-[#000000] text-2xl font-medium"

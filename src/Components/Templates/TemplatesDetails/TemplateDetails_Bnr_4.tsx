@@ -2,7 +2,7 @@ import React from "react";
 
 const TemplateDetails_Bnr_4: React.FC = () => {
   return (
-    <section className="p-6 bg-blue-100 max-w-7xl mx-auto rounded-xl mt-6">
+    <section className="py-19 px-5 bg-blue-100 max-w-7xl mx-auto rounded-xl mt-6">
       <div className="">
         <h2 className="text-2xl font-bold text-gray-900">
           Letterhead Templates by Headerfy

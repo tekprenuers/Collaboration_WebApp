@@ -26,27 +26,27 @@ const Banner_2: React.FC = () => {
       </motion.div>
 
       {/* Right Side: Features Grid */}
-      <div className="items-center pt-10 md:p-15 ">
-        <div className="grid grid-cols-2 gap-4 md:max-w-lg">
+      <div className="items-center pt-15 md:p-15 ">
+        <div className="grid grid-cols-2 gap-3 md:max-w-lg">
           {/* Editable Templates */}
-          <div className="relative bg-custom-gradient-1 text-white md:p-6 p-3  rounded-tl-3xl rounded-br-3xl shadow-lg flex flex-col items-center text-center">
+          <div className="relative bg-custom-gradient-1 text-white md:p-6 py-7 h-43 px-1 lg:h-0 rounded-tl-3xl rounded-br-3xl shadow-lg flex flex-col items-center ">
             <img
               src={Image_1}
               alt="Template Icon"
-              className="absolute top-[-1.4rem] left-[60%] lg:-top-8 lg:left-[210px] w-13 md:w-0 lg:w-0"
+              className="absolute top-[-1.4rem] left-[60%] lg:-top-8 lg:left-[210px] w-13 md:w-15 lg:w-15"
             />
             <h3 className="lg:text-lg text-sm font-bold lg:mt-10 pt-4 md:pt-0 lg:pt-0 mb-2">Editable Templates</h3>
-            <p className="text-sm">
+            <p className="text-[12px] text-center">
               Choose from 50+ customizable templates tailored for your industry.
             </p>
           </div>
 
           {/* AI Content Generator */}
-          <div className="relative bg-custom-gradient-2 text-white md:p-6 rounded-tl-3xl rounded-br-3xl shadow-lg flex flex-col items-center text-center">
+          <div className="relative bg-custom-gradient-2 text-white md:p-6 p-3 h-43 lg:h-0 rounded-tl-3xl rounded-br-3xl shadow-lg flex flex-col items-center text-center">
             <img
               src={Image_2}
               alt="AI Icon"
-              className="absolute top-[-2rem] left-[55%] lg:-top-14 lg:left-[205px] w-20 md:w-0 lg:w-0"
+              className="absolute top-[-2rem] left-[55%] lg:-top-14 lg:left-[205px] w-20 md:w-15 lg:w-25"
             />
             <h3 className="lg:text-lg text-sm font-bold lg:mt-10 pt-8 md:pt-0 lg:pt-0 mb-2">
               AI Content Generator
@@ -57,7 +57,7 @@ const Banner_2: React.FC = () => {
           </div>
 
           {/* Export in Multiple Formats */}
-          <div className="relative bg-custom-gradient-3 text-white md:p-6 p-4  rounded-tl-3xl rounded-br-3xl shadow-lg flex flex-col items-center text-center">
+          <div className="relative bg-custom-gradient-3 text-white md:p-6 px-1 mt-4 py-6 h-43 lg:h-0 rounded-tl-3xl rounded-br-3xl shadow-lg flex flex-col items-center text-center">
             <img
               src={Image_3}
               alt="Export Icon"
@@ -66,13 +66,13 @@ const Banner_2: React.FC = () => {
             <h3 className="lg:text-lg text-sm font-bold lg:mt-10 pt-4 md:pt-0 lg:pt-0 mb-2">
               Export in Multiple Formats
             </h3>
-            <p className="text-sm">
+            <p className="text-[12px]">
               Download your letterhead as PDF, DOCX, or PNG.
             </p>
           </div>
 
           {/* Branding Customization */}
-          <div className="relative bg-custom-gradient-4 text-white md:p-6 rounded-tl-3xl rounded-br-3xl shadow-lg flex flex-col items-center text-center">
+          <div className="relative bg-custom-gradient-4 h-43 lg:h-0 text-white md:p-6 mt-4 py-5 rounded-tl-3xl rounded-br-3xl shadow-lg flex flex-col items-center text-center">
             <img
               src={Image_4}
               alt="Branding Icon"
@@ -92,71 +92,3 @@ const Banner_2: React.FC = () => {
 };
 
 export default Banner_2;
-
-
-
-
-
-
-
-
-
-
-
-
-
-// <div className="items-center pt-10 md:p-15">
-//   <div className="grid grid-cols-2 gap-4 md:max-w-lg">
-//     {/* Editable Templates */}
-//     <div className="relative bg-custom-gradient-1 text-white md:p-6 rounded-tl-3xl rounded-br-3xl shadow-lg flex flex-col items-center text-center lg:min-h-[190px]">
-//       <img
-//         src={Image_1}
-//         alt="Template Icon"
-//         className="absolute lg:-top-8 lg:left-[210px] transform -translate-x-1/2 -top-6 left-30"
-//       />
-//       <h3 className="md:text-lg font-bold mt-7 mb-2">Editable Templates</h3>
-//       <p className="text-sm mb-4">
-//         Choose from 50+ customizable templates tailored for your industry.
-//       </p>
-//     </div>
-
-//     {/* AI Content Generator */}
-//     <div className="relative bg-custom-gradient-2 text-white md:p-6  rounded-tl-3xl rounded-br-3xl shadow-lg flex flex-col items-center text-center">
-//       <img
-//         src={Image_2}
-//         alt="AI Icon"
-//         className="absolute lg:-top-14 lg:left-[205px] -top-13 left-30 transform -translate-x-1/2"
-//       />
-//       <h3 className="md:text-lg font-bold mt-7 mb-2">AI Content Generator</h3>
-//       <p className="text-sm">
-//         Generate professional content in seconds with AI.
-//       </p>
-//     </div>
-
-//     {/* Export in Multiple Formats */}
-//     <div className="relative bg-custom-gradient-3 text-white md:p-6 mt-4 rounded-tl-3xl rounded-br-3xl shadow-lg flex flex-col items-center text-center lg:min-h-[190px]">
-//       <img
-//         src={Image_3}
-//         alt="Export Icon"
-//         className="absolute lg:-top-9 lg:left-[210px] -top-6 left-30 transform -translate-x-1/2"
-//       />
-//       <h3 className="md:text-lg font-bold mt-7 mb-2 m-2">
-//         Export in Multiple Formats
-//       </h3>
-//       <p className="text-sm ">Download your letterhead as PDF, DOCX, or PNG.</p>
-//     </div>
-
-//     {/* Branding Customization */}
-//     <div className="relative bg-custom-gradient-4 text-white md:p-6 mt-4 rounded-tl-3xl rounded-br-3xl shadow-lg flex flex-col items-center text-center">
-//       <img
-//         src={Image_4}
-//         alt="Branding Icon"
-//         className="absolute lg:-top-5 lg:left-[210px] -top-6 left-30 transform -translate-x-1/2"
-//       />
-//       <h3 className="md:text-lg font-bold mt-7 mb-2">Branding Customization</h3>
-//       <p className="text-sm">
-//         Tailor colors, fonts, and logos to match your brand.
-//       </p>
-//     </div>
-//   </div>
-// </div>;

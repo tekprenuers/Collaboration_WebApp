@@ -16,11 +16,11 @@ const Banner_3: React.FC = () => {
       </h2>
 
       {/* Steps Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:gap-9 gap-3 mt-9">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:gap-9 gap-10 mt-14">
         {/* Step 1 */}
         <div className="flex items-start lg:gap-6 gap-3">
-          <div className="bg-[#D9E0E8] p-3 rounded-md flex items-center justify-center lg:w-46 lg:h-25 h-24 w-50">
-            <img src={Icon_4} alt="Step 1" className="w-20 lg:w-16 h-15" />
+          <div className="bg-[#D9E0E8] p-3 rounded-md flex items-center justify-center lg:w-46 lg:h-25 h-19 w-50">
+            <img src={Icon_4} alt="Step 1" className="lg:w-16 h-12" />
           </div>
           <div>
             <h3 className="text-[#003366] font-bold text-lg font-poppins">01</h3>
@@ -34,8 +34,8 @@ const Banner_3: React.FC = () => {
 
         {/* Step 2 */}
         <div className="flex items-start lg:gap-6 gap-3">
-          <div className="bg-[#D9E0E8] rounded-md flex items-center justify-center lg:w-35 h-24 w-40">
-            <img src={Icon_1} alt="Step 2" className="w-20 h-15" />
+          <div className="bg-[#D9E0E8] rounded-md flex items-center justify-center lg:w-35 h-19 w-40">
+            <img src={Icon_1} alt="Step 2" className="lg:w-20 h-14" />
           </div>
           <div>
             <h3 className="text-[#003366] font-bold text-lg">02</h3>
@@ -48,8 +48,8 @@ const Banner_3: React.FC = () => {
 
         {/* Step 3 */}
         <div className="flex items-start lg:gap-6 gap-3">
-          <div className="bg-[#D9E0E8] rounded-md flex items-center justify-center lg:w-45 h-25 w-50">
-            <img src={Icon_2} alt="Step 3" className="w-20 h-15" />
+          <div className="bg-[#D9E0E8] rounded-md flex items-center justify-center lg:w-45 h-19 w-50">
+            <img src={Icon_2} alt="Step 3" className="lg:w-20 h-15" />
           </div>
           <div>
             <h3 className="text-[#003366] font-bold font-poppins text-lg">03</h3>
@@ -62,8 +62,8 @@ const Banner_3: React.FC = () => {
 
         {/* Step 4 */}
         <div className="flex items-start lg:gap-6 gap-3">
-          <div className="bg-[#D9E0E8]  rounded-md flex items-center justify-center lg:w-40 lg:h-25 h-23 w-40">
-            <img src={Icon_3} alt="Step 4" className="w-20 h-19" />
+          <div className="bg-[#D9E0E8]  rounded-md flex items-center justify-center lg:w-40 lg:h-25 h-19 w-40">
+            <img src={Icon_3} alt="Step 4" className="lg:w-20 lg:h-19 h-14" />
           </div>
           <div>
             <h3 className="text-[#003366] font-bold text-lg">04</h3>

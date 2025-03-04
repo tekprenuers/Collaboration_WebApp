@@ -10,7 +10,7 @@ const Banner_1: React.FC = () => {
   return (
     <section className="flex flex-col md:flex-row">
       {/* Left Side: Text Content */}
-      <div className="w-full md:w-1/2 text-center md:text-left md:py-30 py-10 md:ml-8">
+      <div className="md:w-1/2  md:text-left md:py-30 py-10 md:ml-8">
         <h1 className="text-4xl text-start md:text-5xl lg:text-[85px] md:ml-9 ml-3  font-semibold md:max-w-2xl text-[#181818] font-poppins">
           Create Branded Letterheads{" "}
           <span className="text-gradient">Effortlessly</span>
@@ -19,7 +19,7 @@ const Banner_1: React.FC = () => {
           Customize templates, generate content with AI, and download in
           minutes.
         </p>
-        <button className="md:mt-20 md:ml-9 mr-39 px-9 py-3 bg-[#ff5733] text-white font-poppins rounded-lg font-semibold shadow-lg hover:bg-orange-600 transition">
+        <button className="md:mt-20 md:ml-9 ml-3 px-9 py-3 bg-[#ff5733] text-white font-poppins rounded-lg font-semibold shadow-lg hover:bg-orange-600 transition hover:scale-105">
           Explore Templates
         </button>
       </div>
@@ -27,7 +27,7 @@ const Banner_1: React.FC = () => {
       {/* Right Side: Image & Floating Badges (Hidden on Small Screens) */}
       <motion.div className="flex md:w-/2 relative md:py-20 py-15 px-5 md:ml-[120px]">
         {/* Light Blue Background */}
-        <div className="absolute inset-y-0 right-0 md:w-1/2 w-3/4 bg-blue-100"></div>
+        <div className="absolute inset-y-0 right-0 md:w-1/2 w-3/4 lg:bg-blue-100"></div>
 
         {/* Image */}
         <motion.div

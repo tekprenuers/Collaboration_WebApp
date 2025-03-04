@@ -7,7 +7,7 @@ interface TemplateProps {
 
 const TemplateDetails_Bnr_1: React.FC<TemplateProps> = ({ name, image }) => {
   return (
-    <div className="flex flex-col md:flex-row p-6 rounded-lg mx-auto min-h-screen">
+    <div className="flex flex-col md:flex-row rounded-lg mx-auto min-h-screen lg:max-w-7xl">
       {/* Left side - Template Image */}
       <div className="flex-1 flex items-center justify-center">
         <img
