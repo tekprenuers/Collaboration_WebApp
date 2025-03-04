@@ -1,4 +1,4 @@
-import React from 'react'
+import React from "react";
 import {
   createBrowserRouter,
   createRoutesFromElements,
@@ -6,8 +6,8 @@ import {
   Navigate,
   RouterProvider,
 } from "react-router-dom";
-import Login from './Login/Login';
-import { ToastContainer } from 'react-toastify';
+import Login from "./Login/Login";
+import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import ForgotPassword from './Login/ForgotPassword';
 import Signup from './Login/Signup';
@@ -16,10 +16,10 @@ import ResetPassword from './Login/ResetPassword';
 import AuthLayout from './Layout/AuthLayout';
 import Home from './Components/Home/Home';
 import Templates from './Components/Templates/Templates';
-import TemplateDetails from './Components/Templates/TemplateDetails';
-import Learn from './Components/Learn/Learn';
+import TemplateDetails from './Components/Templates/TemplatesDetails/TemplateDetails';
 import Pricing from './Components/Pricing/Pricing';
-import About from './Components/AboutUs/About';
+import Learn from "./Components/Learn/Learn";
+import About from "./Components/AboutUs/About";
 
 
 const router = createBrowserRouter(
@@ -46,13 +46,13 @@ const router = createBrowserRouter(
   )
 );
 
-const App:React.FC = () => {
+const App: React.FC = () => {
   return (
     <>
       <RouterProvider router={router} />
       <ToastContainer />
     </>
   );
-}
+};
 
-export default App
+export default App;

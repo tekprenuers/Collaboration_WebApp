@@ -1,6 +1,7 @@
 import React from "react";
-import { CheckCircle } from "lucide-react";
+import { RxQuestionMarkCircled } from "react-icons/rx";
 import { HiOutlineXMark } from "react-icons/hi2";
+import { IoCheckmarkCircleSharp } from "react-icons/io5";
 
 const Pricing_Bnr_3: React.FC = () => {
   return (
@@ -73,8 +74,8 @@ const Pricing_Bnr_3: React.FC = () => {
             },
           ].map((item, index) => (
             <tr key={index} className="text-center">
-              <td className="p-3 border border-blue-200 whitespace-nowrap text-start">
-                {item.feature}
+              <td className="p-3 border flex justify-between border-blue-200 whitespace-nowrap text-start">
+                {item.feature} <RxQuestionMarkCircled size={20} color="gray"/>
               </td>
               {item.values.map((val, i) => (
                 <td
@@ -85,7 +86,7 @@ const Pricing_Bnr_3: React.FC = () => {
                 >
                   {typeof val === "boolean" ? (
                     val ? (
-                      <CheckCircle
+                      <IoCheckmarkCircleSharp
                         className="text-[#FF5733] inline"
                         size={18}
                       />
