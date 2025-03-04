@@ -10,9 +10,9 @@ import {
 
 export const Footer: React.FC = () => {
   return (
-    <footer className="w-full bg-[#003366] text-white py-10 px-6 pt-20">
+    <footer className="w-full bg-[#003366] text-white py-10 px-6 lg:0 pt-20">
       {/* Top Section */}
-      <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3">
+      <div className="lg:max-w-7xl max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3">
         {/* Left - Logo & Contact */}
         <div>
           <div className="flex items-center ">
@@ -24,7 +24,7 @@ export const Footer: React.FC = () => {
         </div>
 
         {/* Center - Quick Links */}
-        <div className="">
+        <div className="pt-4 md:pt-0 lg:pt-0">
           <h3 className="text-lg font-semibold mb-3 ">Quick Links</h3>
           <ul className="space-y-2 text-gray-300">
             <li>
@@ -56,7 +56,7 @@ export const Footer: React.FC = () => {
 
         {/* Right - Subscription */}
         <div className="lg:ml-auto">
-          <h3 className="text-lg font-semibold mb-3">Subscribe</h3>
+          <h3 className="text-lg font-semibold pt-4 md:pt-0 lg:pt-0 mb-3">Subscribe</h3>
           <div className="flex">
             <input
               type="email"
@@ -71,9 +71,9 @@ export const Footer: React.FC = () => {
       </div>
 
       {/* Bottom Section */}
-      <div className="max-w-6xl mx-auto mt-8 flex flex-col md:flex-row items-center justify-between border-t border-gray-300 pt-4 text-gray-300">
+      <div className="max-w-6xl lg:max-w-7xl mx-auto mt-8 flex flex-col-reverse md:flex-row items-center justify-between border-t border-gray-300 pt-4 text-gray-300">
         {/* Social Icons */}
-        <div className="flex space-x-4 mt-9">
+        <div className="flex space-x-4 mt-3 lg:mt-8">
           <a href="#" className="hover:text-[#ff5733] border p-2 rounded-full">
             <FaLinkedinIn />
           </a>
@@ -94,19 +94,21 @@ export const Footer: React.FC = () => {
         </p>
 
         {/* Legal Links */}
-        <div className="flex space-x-4 mt-4 md:mt-9">
+        <div className="flex lg:space-x-4 space-x-1 mt-4 md:mt-9">
           <a
             href="#"
             className="hover:text-white relative  after:content-[''] after:absolute after:left-0 after:bottom-[-2px] after:w-0 after:h-[2px] after:bg-orange-500 after:transition-all after:duration-300 hover:after:w-full"
           >
             About
           </a>
+          <span>|</span>
           <a
             href="#"
             className="hover:text-white relative  after:content-[''] after:absolute after:left-0 after:bottom-[-2px] after:w-0 after:h-[2px] after:bg-orange-500 after:transition-all after:duration-300 hover:after:w-full"
           >
             Privacy Policy
           </a>
+          <span>|</span>
           <a
             href="#"
             className="hover:text-white relative  after:content-[''] after:absolute after:left-0 after:bottom-[-2px] after:w-0 after:h-[2px] after:bg-orange-500 after:transition-all after:duration-300 hover:after:w-full"

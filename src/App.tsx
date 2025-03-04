@@ -17,6 +17,7 @@ import AuthLayout from './Layout/AuthLayout';
 import Home from './Components/Home/Home';
 import Templates from './Components/Templates/Templates';
 import TemplateDetails from './Components/Templates/TemplateDetails';
+import Pricing from './Components/Pricing/Pricing';
 
 
 const router = createBrowserRouter(
@@ -33,6 +34,7 @@ const router = createBrowserRouter(
       <Route path="home" element={<Home />} />
       <Route path="template" element={<Templates />} />
       <Route path="template/:templatePath" element={<TemplateDetails />} />
+      <Route path="pricing" element={<Pricing />} />
 
       {/* Redirect unknown routes to Login */}
       <Route path="*" element={<Navigate to="/login" replace />} />

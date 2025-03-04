@@ -1,5 +1,7 @@
 @import "tailwindcss";
 @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Merriweather+Sans:ital,wght@0,300..800;1,300..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+/* import "@fontsource/montserrat"; 
+import "@fontsource/montserrat/700.css";  */
 
 
 .main {
@@ -351,7 +353,7 @@
 }
 
 
-/*====================================  Custom css =======================================*/
+/*==================================== text-Custom css =======================================*/
 .text-gradient {
   background: linear-gradient(to right, black, #ff5733, rgb(23, 23, 105));
   -webkit-background-clip: text;
@@ -368,6 +370,23 @@
   display: inline-block;
 }
 
+.text-gradient-third {
+  background: linear-gradient(to right, #003366, #0C81EE);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+}
+
+.text-gradient-fourth {
+  background: linear-gradient(to right, #FF5733, #0C81EE);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+}
+
+/*==================================== background-Custom css =======================================*/
 
  .bg-custom-gradient-1 {
     background: linear-gradient(to bottom, #243563, #43527A);
