@@ -16,8 +16,10 @@ import ResetPassword from './Login/ResetPassword';
 import AuthLayout from './Layout/AuthLayout';
 import Home from './Components/Home/Home';
 import Templates from './Components/Templates/Templates';
-import TemplateDetails from './Components/Templates/TemplateDetails';
+import TemplateDetails from './Components/Templates/TemplatesDetails/TemplateDetails';
 import Pricing from './Components/Pricing/Pricing';
+import Learn from "./Components/Learn/Learn";
+import About from "./Components/AboutUs/About";
 
 
 const router = createBrowserRouter(
