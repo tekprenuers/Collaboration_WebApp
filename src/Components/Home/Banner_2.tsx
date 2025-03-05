@@ -29,41 +29,41 @@ const Banner_2: React.FC = () => {
       <div className="items-center pt-15 md:p-15 ">
         <div className="grid grid-cols-2 gap-3 md:max-w-lg">
           {/* Editable Templates */}
-          <div className="relative bg-custom-gradient-1 text-white md:p-6 py-7 h-43 px-1 lg:h-0 rounded-tl-3xl rounded-br-3xl shadow-lg flex flex-col items-center ">
+          <div className="relative bg-custom-gradient-1 text-white md:p-6 py-9 h-43  px-1 lg:h-55 rounded-tl-3xl rounded-br-3xl shadow-lg flex flex-col items-center text-center ">
             <img
               src={Image_1}
               alt="Template Icon"
-              className="absolute top-[-1.4rem] left-[60%] lg:-top-8 lg:left-[210px] w-13 md:w-15 lg:w-15"
+              className="absolute top-[-1.4rem] left-[60%] lg:-top-8 lg:left-[185px] w-13 md:w-15 lg:w-15"
             />
-            <h3 className="lg:text-lg text-sm font-bold lg:mt-10 pt-4 md:pt-0 lg:pt-0 mb-2">Editable Templates</h3>
-            <p className="text-[12px] text-center">
+            <h3 className="lg:text-lg text-[12px] font-bold lg:mt-10 pt-4 md:pt-0 lg:pt-0 mb-2">Editable Templates</h3>
+            <p className="text-[12px]">
               Choose from 50+ customizable templates tailored for your industry.
             </p>
           </div>
 
           {/* AI Content Generator */}
-          <div className="relative bg-custom-gradient-2 text-white md:p-6 p-3 h-43 lg:h-0 rounded-tl-3xl rounded-br-3xl shadow-lg flex flex-col items-center text-center">
+          <div className="relative bg-custom-gradient-2 text-white md:p-6 py-6 px-1 h-43 lg:h-55 rounded-tl-3xl rounded-br-3xl shadow-lg flex flex-col items-center text-center">
             <img
               src={Image_2}
               alt="AI Icon"
-              className="absolute top-[-2rem] left-[55%] lg:-top-14 lg:left-[205px] w-20 md:w-15 lg:w-25"
+              className="absolute top-[-2rem] left-[55%] lg:-top-12 lg:left-[160px] w-20 md:w-15 lg:w-25"
             />
-            <h3 className="lg:text-lg text-sm font-bold lg:mt-10 pt-8 md:pt-0 lg:pt-0 mb-2">
+            <h3 className="lg:text-lg text-[12px] font-bold lg:mt-10 pt-8 md:pt-0 lg:pt-0 mb-2">
               AI Content Generator
             </h3>
-            <p className="text-sm pt-1 lg:pt-0">
+            <p className="text-[12px] px-3">
               Generate professional content in seconds with AI.
             </p>
           </div>
 
           {/* Export in Multiple Formats */}
-          <div className="relative bg-custom-gradient-3 text-white md:p-6 px-1 mt-4 py-6 h-43 lg:h-0 rounded-tl-3xl rounded-br-3xl shadow-lg flex flex-col items-center text-center">
+          <div className="relative bg-custom-gradient-3 text-white md:p-6 px-1 mt-4 py-6 h-43 lg:h-55 rounded-tl-3xl rounded-br-3xl shadow-lg flex flex-col items-center text-center">
             <img
               src={Image_3}
               alt="Export Icon"
-              className="absolute top-[-1.1rem] left-[60%]  lg:-top-9 lg:left-[210px] w-16 md:w-0 lg:w-0"
+              className="absolute top-[-1.1rem] left-[60%]  lg:-top-6 lg:left-[180px] w-16 md:w-0 lg:w-18"
             />
-            <h3 className="lg:text-lg text-sm font-bold lg:mt-10 pt-4 md:pt-0 lg:pt-0 mb-2">
+            <h3 className="lg:text-lg text-[12px] font-bold lg:mt-10 pt-4 md:pt-0 lg:pt-0 mb-2">
               Export in Multiple Formats
             </h3>
             <p className="text-[12px]">
@@ -72,16 +72,16 @@ const Banner_2: React.FC = () => {
           </div>
 
           {/* Branding Customization */}
-          <div className="relative bg-custom-gradient-4 h-43 lg:h-0 text-white md:p-6 mt-4 py-5 rounded-tl-3xl rounded-br-3xl shadow-lg flex flex-col items-center text-center">
+          <div className="relative bg-custom-gradient-4 h-43 lg:h-55 px-1 text-white md:p-6 mt-4 py-5 rounded-tl-3xl rounded-br-3xl shadow-lg flex flex-col items-center text-center ">
             <img
               src={Image_4}
               alt="Branding Icon"
-              className="absolute top-[-0.8rem] left-[65%] lg:-top-5 lg:left-[210px] w-13 md:w-0 lg:w-0"
+              className="absolute top-[-0.8rem] left-[65%] lg:-top-5 lg:left-[190px] w-13 md:w-0 lg:w-14"
             />
-            <h3 className="lg:text-lg text-sm font-bold lg:mt-10 p-2 pt-5 md:pt-0 lg:pt-0 lg:mb-2">
+            <h3 className="lg:text-lg text-[12px] font-bold lg:mt-10 p-2 pt-5 md:pt-0 lg:pt-0 lg:mb-2">
               Branding Customization
             </h3>
-            <p className="text-sm mb-2">
+            <p className="text-[12px]">
               Tailor colors, fonts, and logos to match your brand.
             </p>
           </div>

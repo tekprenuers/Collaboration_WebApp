@@ -19,7 +19,7 @@ const Banner_3: React.FC = () => {
       <div className="grid grid-cols-1 md:grid-cols-2 lg:gap-9 gap-10 mt-14">
         {/* Step 1 */}
         <div className="flex items-start lg:gap-6 gap-3">
-          <div className="bg-[#D9E0E8] p-3 rounded-md flex items-center justify-center lg:w-46 lg:h-25 h-19 w-50">
+          <div className="bg-[#D9E0E8] p-3 rounded-md flex items-center justify-center lg:w-35 lg:h-20 h-19 w-50">
             <img src={Icon_4} alt="Step 1" className="lg:w-16 h-12" />
           </div>
           <div>
@@ -34,8 +34,8 @@ const Banner_3: React.FC = () => {
 
         {/* Step 2 */}
         <div className="flex items-start lg:gap-6 gap-3">
-          <div className="bg-[#D9E0E8] rounded-md flex items-center justify-center lg:w-35 h-19 w-40">
-            <img src={Icon_1} alt="Step 2" className="lg:w-20 h-14" />
+          <div className="bg-[#D9E0E8] rounded-md flex items-center justify-center lg:h-20 lg:w-35 h-19 w-40">
+            <img src={Icon_1} alt="Step 2" className="lg:w-14 h-14 lg:h-14" />
           </div>
           <div>
             <h3 className="text-[#003366] font-bold text-lg">02</h3>
@@ -48,7 +48,7 @@ const Banner_3: React.FC = () => {
 
         {/* Step 3 */}
         <div className="flex items-start lg:gap-6 gap-3">
-          <div className="bg-[#D9E0E8] rounded-md flex items-center justify-center lg:w-45 h-19 w-50">
+          <div className="bg-[#D9E0E8] rounded-md flex items-center justify-center lg:h-20 lg:w-35 h-20 w-50">
             <img src={Icon_2} alt="Step 3" className="lg:w-20 h-15" />
           </div>
           <div>
@@ -62,8 +62,8 @@ const Banner_3: React.FC = () => {
 
         {/* Step 4 */}
         <div className="flex items-start lg:gap-6 gap-3">
-          <div className="bg-[#D9E0E8]  rounded-md flex items-center justify-center lg:w-40 lg:h-25 h-19 w-40">
-            <img src={Icon_3} alt="Step 4" className="lg:w-20 lg:h-19 h-14" />
+          <div className="bg-[#D9E0E8]  rounded-md flex items-center justify-center lg:w-35 lg:h-20 h-19 w-40">
+            <img src={Icon_3} alt="Step 4" className="lg:w-15 lg:h-14 h-14" />
           </div>
           <div>
             <h3 className="text-[#003366] font-bold text-lg">04</h3>
