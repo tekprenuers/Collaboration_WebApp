@@ -7,18 +7,18 @@ import { motion } from "framer-motion";
 
 const Banner_2: React.FC = () => {
   return (
-    <section className="flex flex-col md:flex-row items-center justify-between px-6 md:px-12 lg:px-20 md:py-22 py-15 bg-[#00336626]">
+    <section className="flex flex-col md:flex-row items-center justify-between p-4  md:py-22 py-15 bg-[#00336626]">
       {/* Left Side: Text Content */}
       <motion.div
         initial={{ x: "-100%", opacity: 0 }}
         animate={{ x: "0%", opacity: 1 }}
         transition={{ duration: 0.5, delay: 1, ease: "easeInOut" }}
-        className="w-full md:w-1/2 text-center md:text-left"
+        className="w-full md:w-1/2 text-center md:text-left lg:pl-8"
       >
-        <h2 className="font-poppins text-start text-3xl md:text-4xl font-semibold text-[#000000]">
+        <h2 className="font-poppins text-start text-3xl md:text-4xl lg:pl-8 font-semibold text-[#000000]">
           Empowering Your Branding, One Letterhead at a Time
         </h2>
-        <p className="text-[#000000] mt-5 text-lg md:text-2xl text-start">
+        <p className="text-[#000000] mt-5 text-lg md:text-2xl text-start lg:pl-8">
           With customizable templates, AI-powered content, and seamless branding
           tools, we make it easy to create letterheads that speak your brand's
           language.
@@ -33,7 +33,7 @@ const Banner_2: React.FC = () => {
             <img
               src={Image_1}
               alt="Template Icon"
-              className="absolute top-[-1.4rem] left-[60%] lg:-top-8 lg:left-[185px] w-13 md:w-15 lg:w-15"
+              className="absolute top-[-1.4rem] left-[60%] lg:-top-8 lg:left-[165px] w-13 md:w-15 lg:w-15"
             />
             <h3 className="lg:text-lg text-[12px] font-bold lg:mt-10 pt-4 md:pt-0 lg:pt-0 mb-2">Editable Templates</h3>
             <p className="text-[12px]">
@@ -46,7 +46,7 @@ const Banner_2: React.FC = () => {
             <img
               src={Image_2}
               alt="AI Icon"
-              className="absolute top-[-2rem] left-[55%] lg:-top-12 lg:left-[160px] w-20 md:w-15 lg:w-25"
+              className="absolute top-[-2rem] left-[55%] lg:-top-12 lg:left-[140px] w-20 md:w-15 lg:w-25"
             />
             <h3 className="lg:text-lg text-[12px] font-bold lg:mt-10 pt-8 md:pt-0 lg:pt-0 mb-2">
               AI Content Generator
@@ -61,7 +61,7 @@ const Banner_2: React.FC = () => {
             <img
               src={Image_3}
               alt="Export Icon"
-              className="absolute top-[-1.1rem] left-[60%]  lg:-top-6 lg:left-[180px] w-16 md:w-0 lg:w-18"
+              className="absolute top-[-1.1rem] left-[60%]  lg:-top-6 lg:left-[160px] w-16 md:w-0 lg:w-18"
             />
             <h3 className="lg:text-lg text-[12px] font-bold lg:mt-10 pt-4 md:pt-0 lg:pt-0 mb-2">
               Export in Multiple Formats
@@ -76,7 +76,7 @@ const Banner_2: React.FC = () => {
             <img
               src={Image_4}
               alt="Branding Icon"
-              className="absolute top-[-0.8rem] left-[65%] lg:-top-5 lg:left-[190px] w-13 md:w-0 lg:w-14"
+              className="absolute top-[-0.8rem] left-[65%] lg:-top-5 lg:left-[165px] w-13 md:w-0 lg:w-14"
             />
             <h3 className="lg:text-lg text-[12px] font-bold lg:mt-10 p-2 pt-5 md:pt-0 lg:pt-0 lg:mb-2">
               Branding Customization

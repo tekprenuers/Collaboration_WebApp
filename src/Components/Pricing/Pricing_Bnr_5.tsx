@@ -44,38 +44,43 @@ const Pricing_Bnr_5: React.FC = () => {
   };
 
   return (
-    <div className="max-w-7xl mx-auto my-10">
-      <h2 className="text-2xl font-semibold text-center mb-6">
-        Frequently Asked Questions (FAQs)
-      </h2>
-      <div className="space-y-4">
-        {faqs.map((faq, index) => (
-          <div key={index} className="border-b border-gray-300">
-            <button
-              onClick={() => toggleFAQ(index)}
-              className="w-full flex justify-between items-center py-4 text-left text-lg font-medium text-gray-800"
-            >
-              {faq.question}
-              <ChevronDown
-                className={`w-5 h-5 transition-transform ${
-                  openIndex === index ? "rotate-180" : "rotate-0"
-                }`}
-              />
-            </button>
-            {openIndex === index && (
-              <motion.div
-                initial={{ height: 0, opacity: 0 }}
-                animate={{ height: "auto", opacity: 1 }}
-                exit={{ height: 0, opacity: 0 }}
-                className="overflow-hidden text-gray-600 pb-4"
+    <section className="p-4 md:p-[7%]">
+      {" "}
+      <div className="">
+        <h2 className="md:text-2xl px-4 md:px-1 font-semibold text-center mb-6">
+          Frequently Asked Questions (FAQs)
+        </h2>
+        <div className="space-y-4">
+          {faqs.map((faq, index) => (
+            <div key={index} className="border-b border-gray-300">
+              <button
+                onClick={() => toggleFAQ(index)}
+                className="w-full flex justify-between items-center py-4 text-start text-[16px] font-medium text-gray-800"
               >
-                {faq.answer}
-              </motion.div>
-            )}
-          </div>
-        ))}
+                <span className="pr-4">{faq.question}</span>
+                <ChevronDown
+                  className={`transition-transform flex-shrink-0 ${
+                    openIndex === index ? "rotate-180" : "rotate-0"
+                  }`}
+                  size={19}
+                />
+              </button>
+
+              {openIndex === index && (
+                <motion.div
+                  initial={{ height: 0, opacity: 0 }}
+                  animate={{ height: "auto", opacity: 1 }}
+                  exit={{ height: 0, opacity: 0 }}
+                  className="overflow-hidden text-gray-600 pb-4 text-[12px]"
+                >
+                  {faq.answer}
+                </motion.div>
+              )}
+            </div>
+          ))}
+        </div>
       </div>
-    </div>
+    </section>
   );
 };
 

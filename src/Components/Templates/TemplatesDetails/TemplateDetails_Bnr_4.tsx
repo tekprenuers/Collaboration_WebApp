@@ -2,8 +2,8 @@ import React from "react";
 
 const TemplateDetails_Bnr_4: React.FC = () => {
   return (
-    <section className="py-19 px-5 bg-blue-100 max-w-7xl mx-auto rounded-xl mt-6">
-      <div className="">
+    <section className="md:p-[4%] pt-9">
+      <div className="bg-blue-100 md:py-19 py-6 px-5 rounded-xl">
         <h2 className="text-2xl font-bold text-gray-900">
           Letterhead Templates by Headerfy
         </h2>
@@ -20,9 +20,13 @@ const TemplateDetails_Bnr_4: React.FC = () => {
           your business needs. Choose from Visme’s design library full of
           shapes, icons, photos and more to decorate your letterhead.
         </p>
-        <button className="mt-6 bg-red-500 text-white px-6 py-3 rounded-lg font-semibold shadow-md hover:bg-red-600 transition">
-          Create Your Letterhead Now
-        </button>
+
+        {/* Wrapper div to center the button on small screens */}
+        <div className="mt-6 flex justify-center md:justify-start">
+          <button className="bg-[#ff5733] text-white px-6 py-3 rounded-lg font-semibold shadow-md hover:bg-red-600 transition">
+            Create Your Letterhead Now
+          </button>
+        </div>
       </div>
     </section>
   );

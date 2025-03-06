@@ -14,7 +14,7 @@ const templates = [
   },
   {
     title: "Law Firm - Letterhead",
-    description: "Maintain your confidence in your legal writings.",
+    description: "Instill confidence in your law firm using this classic",
     image: "law-firm.jpg",
   },
   {
@@ -36,19 +36,23 @@ const templates = [
 
 const TemplateDetails_Bnr_3: React.FC = () => {
   return (
-    <div className=" max-w-7xl mx-auto mt-7">
-      <h2 className="text-xl font-bold mb-4 font-poppins">More Like This</h2>
+    <div className="md:p-[4%]">
+      <h2 className="text-xl font-bold mb-4 font-poppins pt-5">
+        More Like This
+      </h2>
       <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
         {templates.map((template, index) => (
-          <div key={index} className="bg-white shadow-md rounded-lg p-3">
-            <img
-              src={template.image}
-              alt={template.title}
-              className="w-full h-32 object-cover rounded-md"
-            />
-            <h3 className="text-lg font-semibold mt-2">{template.title}</h3>
-            <p className="text-gray-600 text-sm">{template.description}</p>
-          </div>
+          <>
+            <div key={index} className="rounded-lg">
+              <img
+                src={template.image}
+                alt={template.title}
+                className="w-full h-32 object-cover rounded-md bg-amber-800"
+              />
+              <h3 className="font-semibold mt-2 text-sm">{template.title}</h3>
+              <p className="text-gray-600 text-sm">{template.description}</p>
+            </div>
+          </>
         ))}
       </div>
     </div>

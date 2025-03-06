@@ -90,7 +90,7 @@ const TemplateBody: React.FC = () => {
 
   return (
     <>
-      <section className="lg:flex p-9 hidden">
+      <section className="lg:flex p-6 md:p-[7%] hidden">
         {/* Sidebar */}
         <aside>
           {/* Industry & Role Header */}

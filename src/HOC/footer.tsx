@@ -10,9 +10,9 @@ import {
 
 export const Footer: React.FC = () => {
   return (
-    <footer className="w-full bg-[#003366] text-white py-10 px-6 lg:0 pt-20 max-w-[1600px] mx-auto">
+    <footer className=" bg-[#003366] text-white p-[7%] max-w-[]">
       {/* Top Section */}
-      <div className="lg:max-w-7xl max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3">
+      <div className=" mx-auto grid grid-cols-1 md:grid-cols-3">
         {/* Left - Logo & Contact */}
         <div>
           <div className="flex items-center ">
@@ -71,7 +71,7 @@ export const Footer: React.FC = () => {
       </div>
 
       {/* Bottom Section */}
-      <div className="max-w-6xl lg:max-w-7xl mx-auto mt-8 flex flex-col-reverse md:flex-row items-center justify-between border-t border-gray-300 pt-4 text-gray-300">
+      <div className=" mx-auto mt-8 flex flex-col-reverse md:flex-row items-center justify-between border-t border-gray-300 pt-4 text-gray-300">
         {/* Social Icons */}
         <div className="flex space-x-4 mt-3 lg:mt-8">
           <a href="#" className="hover:text-[#ff5733] border p-2 rounded-full">
