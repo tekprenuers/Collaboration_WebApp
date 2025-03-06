@@ -6,13 +6,13 @@ const Pricing_Bnr_1: React.FC = () => {
   return (
     <div className="flex flex-col items-center text-center py-9">
       {/* Heading */}
-      <h1 className="text-2xl md:text-4xl font-bold text-[#000000B0] font-poppins">
+      <h1 className="text-[20px] md:text-4xl font-bold text-[#000000B0] font-poppins">
         Create <span className="text-gradient-third font-bold">beautiful</span>{" "}
         content, faster.
       </h1>
 
       {/* Subheading */}
-      <p className="text-[#000000B0] mt-2 text-sm md:text-base">
+      <p className="text-[#000000B0] mt-2 text-[11px] md:text-base">
         Simple scalable pricing. No hidden fees. Cancel anytime.
       </p>
 

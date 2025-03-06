@@ -6,7 +6,7 @@ import Icon_4 from "../../assets/vector-illustration/icon_4.png";
 
 const Banner_3: React.FC = () => {
   return (
-    <section className="mx-auto py-12 px-6 md:12 lg:px-28">
+    <section className="mx-auto py-12 px-6 lg:p-[7%]">
       {/* Quick Tips */}
       <h5 className="text-[#003366] font-bold uppercase font-merriweather text-md">
         Quick Tips
@@ -19,7 +19,7 @@ const Banner_3: React.FC = () => {
       <div className="grid grid-cols-1 md:grid-cols-2 lg:gap-9 gap-10 mt-14">
         {/* Step 1 */}
         <div className="flex items-start lg:gap-6 gap-3">
-          <div className="bg-[#D9E0E8] p-3 rounded-md flex items-center justify-center lg:w-35 lg:h-20 h-19 w-50">
+          <div className="bg-[#D9E0E8] p-3 rounded-md flex items-center justify-center lg:w-39 lg:h-20 h-19 w-50">
             <img src={Icon_4} alt="Step 1" className="lg:w-16 h-12" />
           </div>
           <div>
@@ -48,7 +48,7 @@ const Banner_3: React.FC = () => {
 
         {/* Step 3 */}
         <div className="flex items-start lg:gap-6 gap-3">
-          <div className="bg-[#D9E0E8] rounded-md flex items-center justify-center lg:h-20 lg:w-35 h-20 w-50">
+          <div className="bg-[#D9E0E8] rounded-md flex items-center justify-center lg:h-20 lg:w-39 h-20 w-50">
             <img src={Icon_2} alt="Step 3" className="lg:w-20 h-15" />
           </div>
           <div>
