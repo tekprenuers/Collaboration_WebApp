@@ -17,10 +17,10 @@ export const Footer: React.FC = () => {
         <div>
           <div className="flex items-center ">
             <img src={HLogo} alt="Headerfly Logo" className="object-contain" />
-            <span className="text-md ml-0.5 text-[#ffffff]">eaderfly</span>
+            <span className="text-md ml-0.5 text-[#ffffff]">eaderfy</span>
           </div>
           <p className="mt-3">+234 804-895-014</p>
-          <p className="text-gray-300 mt-3">support@Headerfly</p>
+          <p className="text-gray-300 mt-3">support@Headerfy</p>
         </div>
 
         {/* Center - Quick Links */}
@@ -90,7 +90,7 @@ export const Footer: React.FC = () => {
 
         {/* Copyright */}
         <p className="mt-4 md:mt-9">
-          {"\u00A9"} {new Date().getFullYear()} Headerfly. All rights reserved.
+          {"\u00A9"} {new Date().getFullYear()} Headerfy. All rights reserved.
         </p>
 
         {/* Legal Links */}
