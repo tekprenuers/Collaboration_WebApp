@@ -125,9 +125,9 @@ const Pricing_Bnr_3: React.FC = () => {
                   Starter <br />
                   <div className="flex flex-col ">
                     <h2 className="text-[#000000B0] font-poppins text-[8px]">
-                      NG
+                      NG{" "}
                       <span className="text-[#000000B0] font-bold text-[15px]">
-                        111111110
+                        1000
                       </span>
                       /mo
                     </h2>
@@ -140,7 +140,7 @@ const Pricing_Bnr_3: React.FC = () => {
                     <h2 className="text-[#000000B0] font-poppins text-[8px]">
                       NG{" "}
                       <span className="text-[#000000B0] font-bold text-[15px]">
-                        111111110
+                        1000
                       </span>
                       /mo
                     </h2>
@@ -186,10 +186,6 @@ const Pricing_Bnr_3: React.FC = () => {
                 <tr key={index} className="text-center">
                   <td className="p-2 border flex justify-between items-center border-gray-300 text-start text-[10px]">
                     {item.feature}
-                    <RxQuestionMarkCircled
-                      size={13}
-                      className="text-gray-500"
-                    />
                   </td>
                   {item.values.map((val, i) => (
                     <td
