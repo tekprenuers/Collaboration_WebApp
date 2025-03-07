@@ -20,7 +20,7 @@ interface SignupResponse {
   };
 }
 
-// Base URL (replace with actual backend URL)
+// Base URL for API requests
 const API_BASE_URL = "https://tekprenuers.com/api";
 
 // Signup function with console logs for debugging
@@ -29,7 +29,7 @@ export const signup = async (userData: SignupData): Promise<SignupResponse> => {
 
   try {
     const response = await axios.post<SignupResponse>(
-      `${API_BASE_URL}/user/signup`,
+      `${API_BASE_URL}/user/signup`,// API endpoint
       userData
     );
     console.log("Signup success! Response:", response.data); // Log success response

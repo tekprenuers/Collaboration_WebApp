@@ -44,7 +44,7 @@ const Pricing_Bnr_5: React.FC = () => {
   };
 
   return (
-    <section className="p-4 md:p-[7%]">
+    <section className="p-[7%]">
       {" "}
       <div className="">
         <h2 className="md:text-2xl px-4 md:px-1 font-semibold text-center mb-6">
