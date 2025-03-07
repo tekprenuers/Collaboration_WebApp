@@ -6,9 +6,12 @@ import { EyeOff, Eye } from "lucide-react";
 import { motion } from "framer-motion";
 import { useLocation, useNavigate } from "react-router-dom";
 import { signup } from "../../src/Services/authService";
+import { toast } from "react-toastify";
+import { FaTriangleExclamation } from "react-icons/fa6";
 
 const Register: React.FC = () => {
   const [showPassword, setShowPassword] = useState(false);
+  const [passwordError, setPasswordError] = useState(false);
   const [formData, setFormData] = useState({
     fname: "",
     lname: "",
@@ -51,10 +54,13 @@ const Register: React.FC = () => {
    }
 
    {/* Check if password is valid */}
-   if (typeof formData.password !== "string" || formData.password.length < 5) {
+   if (typeof formData.password !== "string" || formData.password.length < 10) {
+     setPasswordError(true);
      setError("Password must be at least 10 characters long.");
      return;
-   }
+   } else {
+    setPasswordError(false);
+  }
 
 
    setLoading(true);
@@ -71,10 +77,11 @@ const Register: React.FC = () => {
      const response = await signup(userData);
 
      console.log("Signup successful! Response:", response);
-
+     toast.success(response.message);
      setSuccess(response.message);
      navigate("/login"); // Redirect after successful signup
    } catch (err: any) {
+     toast.error(err.message);
      console.error("Signup failed! Error:", err);
      console.log("Error response:", err.response); // Check backend response
      setError(err.message || "Signup failed");
@@ -168,7 +175,7 @@ const Register: React.FC = () => {
 
         {/*Pawword -------------------------------------*/}
         <div className="relative password-signup main-signup">
-          <div className="flex items-center relative">
+          <div className="flex items-center relative w-full">
             <input
               type={showPassword ? "text" : "password"}
               name="password"
@@ -176,15 +183,27 @@ const Register: React.FC = () => {
               required
               placeholder=""
               onChange={handleChange}
+              className={`border ${
+                passwordError && "password-error"
+              } rounded-md p-2 w-full transition-all duration-200`}
             />
             <label className="block text-sm font-medium mb-1">Password</label>
-            <button
-              type="button"
-              className="absolute right-2 text-gray-400"
-              onClick={togglePasswordVisibility}
-            >
-              {showPassword ? <Eye size={18} /> : <EyeOff size={18} />}
-            </button>
+
+            {/* Show FaTriangleExclamation if passwordError is true, else show Eye/EyeOff */}
+            {passwordError ? (
+              <FaTriangleExclamation
+                className="absolute right-2 text-red-500"
+                size={18}
+              />
+            ) : (
+              <button
+                type="button"
+                className="absolute right-2 text-gray-400"
+                onClick={togglePasswordVisibility}
+              >
+                {showPassword ? <Eye size={18} /> : <EyeOff size={18} />}
+              </button>
+            )}
           </div>
         </div>
 
@@ -198,17 +217,29 @@ const Register: React.FC = () => {
               required
               placeholder=""
               onChange={handleChange}
+              className={`border ${
+                passwordError && "password-error"
+              } rounded-md p-2 w-full transition-all duration-200`}
             />
             <label className="block text-sm font-medium mb-1">
               Confirm Password
             </label>
-            <button
-              type="button"
-              className="absolute right-2 text-gray-400"
-              onClick={togglePasswordVisibility}
-            >
-              {showPassword ? <Eye size={18} /> : <EyeOff size={18} />}
-            </button>
+            
+            {/* Show FaTriangleExclamation if passwordError is true, else show Eye/EyeOff */}
+            {passwordError ? (
+              <FaTriangleExclamation
+                className="absolute right-2 text-red-500"
+                size={18}
+              />
+            ) : (
+              <button
+                type="button"
+                className="absolute right-2 text-gray-400"
+                onClick={togglePasswordVisibility}
+              >
+                {showPassword ? <Eye size={18} /> : <EyeOff size={18} />}
+              </button>
+            )}
           </div>
         </div>
 
