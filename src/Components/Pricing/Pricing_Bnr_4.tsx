@@ -26,9 +26,9 @@ const TestimonialCard = ({
 
 const Pricing_Bnr_4: React.FC = () => {
   return (
-    <section className="md:p-[4%]">
+    <section className="md:p-[4%] p-[7%]">
       {" "}
-      <div className="w-full flex justify-center px-8 py-8">
+      <div className="w-full flex justify-center md:px-8 md:py-8">
         <div className="grid md:grid-cols-3 gap-6 max-w-7xl w-full">
           <TestimonialCard
             name="JOYCE BRANDAO"

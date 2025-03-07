@@ -5,11 +5,23 @@ import { FaApple } from "react-icons/fa";
 import { EyeOff, Eye } from "lucide-react";
 import { motion } from "framer-motion";
 import { useLocation, useNavigate } from "react-router-dom";
+import { signup } from "../../src/Services/authService";
 
 const Register: React.FC = () => {
   const [showPassword, setShowPassword] = useState(false);
-  const [, setFname] = useState<string>("");
-  const [, setLname] = useState<string>("");
+  const [formData, setFormData] = useState({
+    fname: "",
+    lname: "",
+    email: "",
+    phone: "",
+    password: "",
+    confirmPassword: "",
+  });
+
+  const [error, setError] = useState<string | null>(null);
+  const [success, setSuccess] = useState<string | null>(null);
+  const [loading, setLoading] = useState(false);
+
   const navigate = useNavigate();
   const location = useLocation();
   const isSignup = location.pathname === "/signup";
@@ -18,6 +30,59 @@ const Register: React.FC = () => {
   const togglePasswordVisibility = () => {
     setShowPassword(!showPassword);
   };
+
+  // Handle input changes
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  // Handle form submission
+ const handleSubmit = async (e: React.FormEvent) => {
+   e.preventDefault();
+   setError(null);
+   setSuccess(null);
+
+   console.log("Submitting form...");
+
+   if (formData.password !== formData.confirmPassword) {
+     setError("Passwords do not match!");
+     console.log("Error: Passwords do not match!");
+     return;
+   }
+
+   {/* Check if password is valid */}
+   if (typeof formData.password !== "string" || formData.password.length < 10) {
+     setError("Password must be at least 10 characters long.");
+     return;
+   }
+
+
+   setLoading(true);
+   try {
+     const userData = {
+       fullName: `${formData.fname} ${formData.lname}`, // Combine first and last name
+       email: formData.email,
+       phone: formData.phone,
+       password: formData.password,
+     };
+
+     console.log("Sending user data:", userData);
+
+     const response = await signup(userData);
+
+     console.log("Signup successful! Response:", response);
+
+     setSuccess(response.message);
+     navigate("/login"); // Redirect after successful signup
+   } catch (err: any) {
+     console.error("Signup failed! Error:", err);
+     console.log("Error response:", err.response); // Check backend response
+     setError(err.message || "Signup failed");
+   } finally {
+     setLoading(false);
+   }
+ };
+
 
   return (
     <div className="w-full max-w-sm p-3 pt-25 pb-5 lg:max-w-2xl">
@@ -29,7 +94,6 @@ const Register: React.FC = () => {
       ></motion.div>
       <div className="sm-custom-gradient sm:hidden"></div>
 
-      {/* Left Section - Form */}
       <motion.div
         initial={{ opacity: 0, x: -50 }}
         animate={{ opacity: 1, x: 0 }}
@@ -46,6 +110,7 @@ const Register: React.FC = () => {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0, x: 0 }}
         transition={{ duration: 0.5 }}
+        onSubmit={handleSubmit}
       >
         {/*First and Last Name ---------------------------------------------*/}
         <div className="flex flex-col sm:flex-row sm:gap-x-4">
@@ -55,7 +120,7 @@ const Register: React.FC = () => {
               id="fname"
               name="fname"
               placeholder=" "
-              onChange={(e) => setFname(e.target.value)}
+              onChange={handleChange}
               required
             />
             <span className="block text-sm font-medium mb-1">First Name</span>
@@ -67,7 +132,7 @@ const Register: React.FC = () => {
               name="lname"
               id="lname"
               placeholder=" "
-              onChange={(e) => setLname(e.target.value)}
+              onChange={handleChange}
               required
             />
             <span className="block text-sm font-medium mb-1">Last Name</span>
@@ -81,8 +146,8 @@ const Register: React.FC = () => {
               type="email"
               id="email"
               name="email"
-              placeholder=" "
-              onChange={(e) => setFname(e.target.value)}
+              placeholder=""
+              onChange={handleChange}
               required
             />
             <span className="block text-sm font-medium mb-1">Email</span>
@@ -94,7 +159,7 @@ const Register: React.FC = () => {
               name="phone"
               id="phone"
               placeholder=" "
-              onChange={(e) => setLname(e.target.value)}
+              onChange={handleChange}
               required
             />
             <span className="block text-sm font-medium mb-1">Phone Number</span>
@@ -110,6 +175,7 @@ const Register: React.FC = () => {
               id="password"
               required
               placeholder=""
+              onChange={handleChange}
             />
             <label className="block text-sm font-medium mb-1">Password</label>
             <button
@@ -127,10 +193,11 @@ const Register: React.FC = () => {
           <div className="flex items-center relative mt-6">
             <input
               type={showPassword ? "text" : "password"}
-              name="password"
-              id="password"
+              name="confirmPassword"
+              id="confirmPassword"
               required
               placeholder=""
+              onChange={handleChange}
             />
             <label className="block text-sm font-medium mb-1">
               Confirm Password
@@ -146,7 +213,7 @@ const Register: React.FC = () => {
         </div>
 
         <label className="flex items-center">
-          <input type="checkbox" className="mr-2" />
+          <input type="checkbox" className="mr-2" required />
           <span className="text-sm text-gray-600">
             I agree to all{" "}
             <a href="#" className="text-orange-500">
@@ -160,8 +227,15 @@ const Register: React.FC = () => {
           </span>
         </label>
 
-        <button className="w-full bg-orange-500 text-white py-2 rounded-sm font-semibold hover:bg-orange-600 transition">
-          Create Account
+        {error && <p className="text-red-500 text-sm">{error}</p>}
+        {success && <p className="text-green-500 text-sm">{success}</p>}
+
+        <button
+          type="submit"
+          className="w-full bg-orange-500 text-white py-2 rounded-sm font-semibold hover:bg-orange-600 transition"
+          disabled={loading}
+        >
+          {loading ? "Creating Account..." : "Create Account"}
         </button>
       </motion.form>
 

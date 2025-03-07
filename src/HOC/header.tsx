@@ -128,7 +128,7 @@ export const Header: React.FC = () => {
       {/* Logo */}
       <div className="flex items-center">
         <img src={HLogo} alt="Headerfly Logo" className="object-contain" />
-        <span className="text-md ml-0.5 text-[#ffffff]">eaderfly</span>
+        <span className="text-md ml-0.5 text-[#ffffff]">eaderfy</span>
       </div>
 
       {/* Desktop Navigation */}

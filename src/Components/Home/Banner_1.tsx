@@ -5,8 +5,10 @@ import Ellipse from "../../assets/vector-illustration/Ellipse.png";
 import Star from "../../assets/vector-illustration/bi_stars.png";
 import heroImage from "../../assets/vector-illustration/homeBnr.png";
 import { motion } from "framer-motion";
+import { useNavigate } from "react-router-dom";
 
 const Banner_1: React.FC = () => {
+  const navigate = useNavigate();
   return (
     <section className="flex flex-col md:flex-row">
       {/* Left Side: Text Content */}
@@ -19,7 +21,9 @@ const Banner_1: React.FC = () => {
           Customize templates, generate content with AI, and download in
           minutes.
         </p>
-        <button className="md:mt-8 md:ml-9 ml-3 px-9 py-3 bg-[#ff5733] text-white font-poppins rounded-lg font-semibold shadow-lg hover:bg-orange-600 transition hover:scale-105">
+        <button
+          onClick={() => navigate("/template")}
+          className="md:mt-8 md:ml-9 ml-3 px-9 py-3 bg-[#ff5733] text-white font-poppins rounded-lg font-semibold shadow-lg hover:bg-orange-600 transition hover:scale-105">
           Explore Templates
         </button>
       </div>

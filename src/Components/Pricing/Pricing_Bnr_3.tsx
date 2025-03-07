@@ -110,7 +110,7 @@ const Pricing_Bnr_3: React.FC = () => {
       </div>
 
       {/* Small Screen Version */}
-      <section className="p-2 md:hidden">
+      <section className="p-[7%] md:hidden">
         <div className="">
           <table className="w-full border-collapse border border-gray-300 text-sm md:text-base">
             <thead className="overflow-x-hidden">
@@ -125,9 +125,9 @@ const Pricing_Bnr_3: React.FC = () => {
                   Starter <br />
                   <div className="flex flex-col ">
                     <h2 className="text-[#000000B0] font-poppins text-[8px]">
-                      NG{" "}
+                      NG
                       <span className="text-[#000000B0] font-bold text-[15px]">
-                        #0
+                        111111110
                       </span>
                       /mo
                     </h2>
@@ -140,7 +140,7 @@ const Pricing_Bnr_3: React.FC = () => {
                     <h2 className="text-[#000000B0] font-poppins text-[8px]">
                       NG{" "}
                       <span className="text-[#000000B0] font-bold text-[15px]">
-                        #0
+                        111111110
                       </span>
                       /mo
                     </h2>
