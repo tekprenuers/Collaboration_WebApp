@@ -5,14 +5,42 @@ import { useNavigate } from "react-router-dom";
 import { FcGoogle } from "react-icons/fc";
 import { IoLogoFacebook } from "react-icons/io5";
 import { FaApple } from "react-icons/fa";
+import { AuthLogin } from "../Services/authLoginn"; 
 
-const Login: React.FC = () => {
+const Login = () => {
   const [showPassword, setShowPassword] = useState(false);
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [error, setError] = useState<string | null>(null);
+  const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
 
   const togglePasswordVisibility = () => {
     setShowPassword(!showPassword);
   };
+
+  const handleLogin = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setError(null);
+    setLoading(true);
+
+    try {
+      const loginData = { email, password };
+      const response = await AuthLogin(loginData);
+
+      console.log("Login successful! Response:", response);
+
+      // Redirect to dashboard or another page
+      navigate("/");
+    } catch (err: any) {
+      console.error("Login failed! Error:", err);
+      setError(err.message || "Login failed. Please try again.");
+    } finally {
+      setLoading(false);
+    }
+  };
+
+ 
 
   // const handleSubmit = async (e: React.FormEvent) => {
   //   e.preventDefault();
@@ -38,6 +66,7 @@ const Login: React.FC = () => {
   // };
 
   return (
+
     <div className="w-full max-w-xl p-4">
       <div className="custom-gradient hidden sm:block"></div>
       <div className="sm-custom-gradient sm:hidden"></div>
@@ -57,8 +86,10 @@ const Login: React.FC = () => {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
+        onSubmit={handleLogin}
       >
         {/* Email Field */}
+        {error && <p className="text-red-500">{error}</p>}
 
         <div className="main mt-5">
           <div className="flex items-center relative">
@@ -68,6 +99,7 @@ const Login: React.FC = () => {
               id="email"
               required
               placeholder=""
+              onChange={(e) => { setEmail(e.target.value) }}
             />
             <label className="block text-sm font-medium mb-1">
               Email
@@ -84,6 +116,7 @@ const Login: React.FC = () => {
               id="password"
               required
               placeholder=""
+              onChange={(e) => { setPassword(e.target.value) }}
             />
             <label className="block text-sm font-medium mb-1">Password</label>
             <button
@@ -112,8 +145,8 @@ const Login: React.FC = () => {
         </div>
 
         {/* Login Button */}
-        <button className="w-full bg-orange-500 text-white py-3 rounded-sm font-semibold hover:bg-orange-600 transition">
-          Login
+        <button type="submit" className="w-full bg-orange-500 text-white py-3 rounded-sm font-semibold hover:bg-orange-600 transition">
+          {loading ? "Logging in..." : "Login"}
         </button>
       </motion.form>
 
@@ -124,7 +157,7 @@ const Login: React.FC = () => {
           onClick={() => navigate("/signup")}
           className="text-orange-500 hover:underline"
         >
-          Sign up
+          Sign Up
         </button>
       </p>
 

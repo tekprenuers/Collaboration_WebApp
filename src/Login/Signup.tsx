@@ -51,7 +51,7 @@ const Register: React.FC = () => {
    }
 
    {/* Check if password is valid */}
-   if (typeof formData.password !== "string" || formData.password.length < 10) {
+   if (typeof formData.password !== "string" || formData.password.length < 5) {
      setError("Password must be at least 10 characters long.");
      return;
    }
