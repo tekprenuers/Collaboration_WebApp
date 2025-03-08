@@ -64,7 +64,7 @@ const Pricing_Bnr_3: React.FC = () => {
                 values: [false, true, true],
               },
               {
-                feature: "No headerfy Logo on design",
+                feature: "No headerfy Logo on Projects",
                 values: [false, true, true],
               },
               { feature: "Brand Kit", values: [false, false, true] },
@@ -170,7 +170,7 @@ const Pricing_Bnr_3: React.FC = () => {
                   values: [false, true, true],
                 },
                 {
-                  feature: "No headerfy Logo on design",
+                  feature: "No headerfy Logo on Projects",
                   values: [false, true, true],
                 },
                 { feature: "Brand Kit", values: [false, false, true] },
