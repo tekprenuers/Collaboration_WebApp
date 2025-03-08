@@ -6,6 +6,7 @@ import { FcGoogle } from "react-icons/fc";
 import { IoLogoFacebook } from "react-icons/io5";
 import { FaApple } from "react-icons/fa";
 import { AuthLogin } from "../Services/authLoginn"; 
+import { toast } from "react-toastify";
 
 const Login = () => {
   const [showPassword, setShowPassword] = useState(false);
@@ -29,7 +30,7 @@ const Login = () => {
       const response = await AuthLogin(loginData);
 
       console.log("Login successful! Response:", response);
-
+      toast.success(response.message);
       // Redirect to dashboard or another page
       navigate("/");
     } catch (err: any) {
