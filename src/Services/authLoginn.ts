@@ -6,26 +6,37 @@ interface LoginData {
   password: string;
 }
 
+interface User {
+  id: number;
+  email: string;
+  fullName: string;
+}
+
 interface LoginResponse {
   success: boolean;
   message: string;
   token?: string;
-  user?: {
-    id: number;
-    email: string;
-    fullName: string;
-  };
+  user?: User;
 }
 
-
 // Login function
-export const AuthLogin = async (loginData: LoginData): Promise<LoginResponse> => {
+export const AuthLogin = async (
+  loginData: LoginData
+): Promise<LoginResponse> => {
   console.log("Sending login request with data:", loginData);
-  const response = await apiRequest<LoginResponse>("post", "user/login", loginData);
+  const response = await apiRequest<LoginResponse>(
+    "post",
+    "user/login",
+    loginData
+  );
 
-  if (response.token) {
+  if (response.token && response.user) {
     localStorage.setItem("authToken", response.token);
-    console.log("Token stored in localStorage");
+    localStorage.setItem("user", JSON.stringify(response.user));
+    console.log("Token and user data stored in localStorage");
+  } else if (response.token) {
+    localStorage.setItem("authToken", response.token);
+    console.warn("Token stored, but user data is missing in the response");
   }
 
   return response;
@@ -34,5 +45,6 @@ export const AuthLogin = async (loginData: LoginData): Promise<LoginResponse> =>
 // Logout function
 export const logout = () => {
   localStorage.removeItem("authToken");
-  console.log("User logged out and token removed");
+  localStorage.removeItem("user");
+  console.log("User logged out and data cleared from localStorage");
 };

@@ -5,69 +5,47 @@ import { useNavigate } from "react-router-dom";
 import { FcGoogle } from "react-icons/fc";
 import { IoLogoFacebook } from "react-icons/io5";
 import { FaApple } from "react-icons/fa";
-import { AuthLogin } from "../Services/authLoginn"; 
 import { toast } from "react-toastify";
+import { useAuth } from "../Context/AuthContext"; // ✅ Using useAuth
 
-const Login = () => {
+const Login: React.FC = () => {
   const [showPassword, setShowPassword] = useState(false);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState<string | null>(null);
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
-
+  const { login, user } = useAuth(); // ✅ Get login function from AuthContext
+  console.log("User state in Login.tsx:", user);
+  // Toggle password visibility
   const togglePasswordVisibility = () => {
-    setShowPassword(!showPassword);
+    setShowPassword((prev) => !prev);
   };
 
+  // Handle login
   const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault();
     setError(null);
     setLoading(true);
 
+    
     try {
-      const loginData = { email, password };
-      const response = await AuthLogin(loginData);
-
-      console.log("Login successful! Response:", response);
-      toast.success(response.message);
-      // Redirect to dashboard or another page
-      navigate("/");
+      await login(email.trim(), password); // ✅ Using login from useAuth
+      toast.success("Login successful!");
+      navigate("/"); // Redirect to home/dashboard
     } catch (err: any) {
       console.error("Login failed! Error:", err);
-      setError(err.message || "Login failed. Please try again.");
+      const errorMessage =
+        err?.response?.data?.message || "Login failed. Please try again.";
+      setError(errorMessage);
+      toast.error(errorMessage);
     } finally {
       setLoading(false);
     }
   };
-
  
 
-  // const handleSubmit = async (e: React.FormEvent) => {
-  //   e.preventDefault();
-  //   try {
-  //     const response = await fetch(
-  //       "https://your-backend.com/api/send-reset-code",
-  //       {
-  //         method: "POST",
-  //         headers: { "Content-Type": "application/json" },
-  //         body: JSON.stringify({ email }),
-  //       }
-  //     );
-
-  //     const data = await response.json();
-  //     if (response.ok) {
-  //       navigate("/verify-code", { state: { email } }); // Navigate to the code verification page
-  //     } else {
-  //       alert(data.message || "Something went wrong");
-  //     }
-  //   } catch (error) {
-  //     console.error("Error:", error);
-  //   }
-  // };
-
   return (
-
     <div className="w-full max-w-xl p-4">
       <div className="custom-gradient hidden sm:block"></div>
       <div className="sm-custom-gradient sm:hidden"></div>
@@ -100,11 +78,11 @@ const Login = () => {
               id="email"
               required
               placeholder=""
-              onChange={(e) => { setEmail(e.target.value) }}
+              onChange={(e) => {
+                setEmail(e.target.value);
+              }}
             />
-            <label className="block text-sm font-medium mb-1">
-              Email
-            </label>
+            <label className="block text-sm font-medium mb-1">Email</label>
           </div>
         </div>
 
@@ -117,7 +95,9 @@ const Login = () => {
               id="password"
               required
               placeholder=""
-              onChange={(e) => { setPassword(e.target.value) }}
+              onChange={(e) => {
+                setPassword(e.target.value);
+              }}
             />
             <label className="block text-sm font-medium mb-1">Password</label>
             <button
@@ -146,7 +126,10 @@ const Login = () => {
         </div>
 
         {/* Login Button */}
-        <button type="submit" className="w-full bg-orange-500 text-white py-3 rounded-sm font-semibold hover:bg-orange-600 transition">
+        <button
+          type="submit"
+          className="w-full bg-orange-500 text-white py-3 rounded-sm font-semibold hover:bg-orange-600 transition"
+        >
           {loading ? "Logging in..." : "Login"}
         </button>
       </motion.form>
