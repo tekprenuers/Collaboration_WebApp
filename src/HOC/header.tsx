@@ -39,7 +39,7 @@
 //             key={item.path}
 //             to={item.path}
 //             className={({ isActive }) =>
-              // `relative after:content-[''] after:absolute after:left-0 after:bottom-[-2px] after:w-0 after:h-[2px] after:bg-orange-500 after:transition-all after:duration-300 hover:after:w-full ${
+// `relative after:content-[''] after:absolute after:left-0 after:bottom-[-2px] after:w-0 after:h-[2px] after:bg-orange-500 after:transition-all after:duration-300 hover:after:w-full ${
 //                 isActive
 //                   ? "after:w-full text-[#FF5733]"
 //                   : "text-white hover:text-gray-300"
@@ -102,11 +102,12 @@
 // };
 
 
-import React, { useState } from "react";
+import React, {  useState } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import HLogo from "../assets/vector-illustration/Heady.png";
+import { useAuth } from "../Content/AuthContent";
 
 const NavigationLink = [
   { path: "/", label: "Home" },
@@ -115,6 +116,8 @@ const NavigationLink = [
   { path: "/learn", label: "Learn" },
   { path: "/about", label: "About Us" },
 ];
+
+const { isLoggedIn} = useAuth();
 
 export const Header: React.FC = () => {
   const navigate = useNavigate();
@@ -138,10 +141,9 @@ export const Header: React.FC = () => {
             key={item.path}
             to={item.path}
             className={({ isActive }) =>
-              `relative after:content-[''] after:absolute after:left-0 after:bottom-[-2px] after:w-0 after:h-[2px] after:bg-orange-500 after:transition-all after:duration-300 hover:after:w-full ${
-                isActive
-                  ? "after:w-full text-[#FF5733]"
-                  : "text-white hover:text-gray-300"
+              `relative after:content-[''] after:absolute after:left-0 after:bottom-[-2px] after:w-0 after:h-[2px] after:bg-orange-500 after:transition-all after:duration-300 hover:after:w-full ${isActive
+                ? "after:w-full text-[#FF5733]"
+                : "text-white hover:text-gray-300"
               }`
             }
           >
@@ -151,7 +153,7 @@ export const Header: React.FC = () => {
       </nav>
 
       {/* Login & Signup Buttons */}
-      <div className="flex items-center space-x-4">
+      {isLoggedIn ? <p>pp</p> : (<div className="flex items-center space-x-4">
         <button onClick={handleLogin} className="hover:text-[#ff5733] hidden md:block">
           Login
         </button>
@@ -166,7 +168,7 @@ export const Header: React.FC = () => {
         <button onClick={() => setMenuOpen(true)} className="md:hidden">
           <Menu />
         </button>
-      </div>
+      </div>)}
 
       {/* Mobile Full-Screen Menu with Smooth Text Disappearance */}
       <AnimatePresence>

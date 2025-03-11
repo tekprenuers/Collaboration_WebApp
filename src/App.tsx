@@ -23,6 +23,8 @@ import About from "./Components/AboutUs/About";
 
 
 const router = createBrowserRouter(
+
+    
   createRoutesFromElements(
     <>
       <Route element={<AuthLayout />}>
