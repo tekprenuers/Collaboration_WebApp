@@ -5,10 +5,13 @@ import { FaApple } from "react-icons/fa";
 import { EyeOff, Eye } from "lucide-react";
 import { motion } from "framer-motion";
 import { useLocation, useNavigate } from "react-router-dom";
-import { signup } from "../../src/Services/authService";
+import { toast } from "react-toastify";
+import { FaTriangleExclamation } from "react-icons/fa6";
+import { useAuth } from "../Context/AuthContext"; // ✅ Use AuthContext
 
 const Register: React.FC = () => {
   const [showPassword, setShowPassword] = useState(false);
+  const [passwordError, setPasswordError] = useState(false);
   const [formData, setFormData] = useState({
     fname: "",
     lname: "",
@@ -26,63 +29,73 @@ const Register: React.FC = () => {
   const location = useLocation();
   const isSignup = location.pathname === "/signup";
 
+  const { register } = useAuth(); // Use `register` function from AuthContext
+
   // Toggle password visibility
   const togglePasswordVisibility = () => {
-    setShowPassword(!showPassword);
+    setShowPassword((prev) => !prev);
   };
 
   // Handle input changes
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
+    setFormData((prev) => ({ ...prev, [e.target.name]: e.target.value }));
   };
 
   // Handle form submission
- const handleSubmit = async (e: React.FormEvent) => {
-   e.preventDefault();
-   setError(null);
-   setSuccess(null);
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setError(null);
+    setSuccess(null);
 
-   console.log("Submitting form...");
+    console.log("Submitting form...");
 
-   if (formData.password !== formData.confirmPassword) {
-     setError("Passwords do not match!");
-     console.log("Error: Passwords do not match!");
-     return;
-   }
+    if (formData.password !== formData.confirmPassword) {
+      setError("Passwords do not match!");
+      console.log("Error: Passwords do not match!");
+      return;
+    }
 
-   {/* Check if password is valid */}
-   if (typeof formData.password !== "string" || formData.password.length < 5) {
-     setError("Password must be at least 10 characters long.");
-     return;
-   }
+    /* Check if password is valid */
+    if (typeof formData.password !== "string" || formData.password.length < 10) {
+    setPasswordError(true);
+    setError("Password must be at least 10 characters long.");
+    return;
+    } else {
+    setPasswordError(false);
+    }
 
+    setLoading(true);
+    try {
+      const userData = {
+        fullName: `${formData.fname} ${formData.lname}`.trim(), // Ensure no extra spaces
+        email: formData.email.trim(),
+        phone: formData.phone.trim(),
+        password: formData.password,
+      };
 
-   setLoading(true);
-   try {
-     const userData = {
-       fullName: `${formData.fname} ${formData.lname}`, // Combine first and last name
-       email: formData.email,
-       phone: formData.phone,
-       password: formData.password,
-     };
+      console.log("Sending user data:", userData);
 
-     console.log("Sending user data:", userData);
+      await register(
+        userData.email,
+        userData.phone,
+        userData.fullName,
+        userData.password
+      ); // ✅ Use correct parameters
 
-     const response = await signup(userData);
-
-     console.log("Signup successful! Response:", response);
-
-     setSuccess(response.message);
-     navigate("/login"); // Redirect after successful signup
-   } catch (err: any) {
-     console.error("Signup failed! Error:", err);
-     console.log("Error response:", err.response); // Check backend response
-     setError(err.message || "Signup failed");
-   } finally {
-     setLoading(false);
-   }
- };
-
+      console.log("Signup successful!");
+      toast.success("Signup successful!");
+      setSuccess("Signup successful!");
+      navigate("/login"); // Redirect after successful signup
+    } catch (err: any) {
+      const errorMessage = err?.response?.data?.message || "Signup failed";
+      toast.error(errorMessage);
+      console.error("Signup failed! Error:", err);
+      console.log("Error response:", err.response); // Check backend response
+      setError(errorMessage);
+    } finally {
+      setLoading(false);
+    }
+  };
 
   return (
     <div className="w-full max-w-sm p-3 pt-25 pb-5 lg:max-w-2xl">
@@ -168,7 +181,7 @@ const Register: React.FC = () => {
 
         {/*Pawword -------------------------------------*/}
         <div className="relative password-signup main-signup">
-          <div className="flex items-center relative">
+          <div className="flex items-center relative w-full">
             <input
               type={showPassword ? "text" : "password"}
               name="password"
@@ -176,15 +189,27 @@ const Register: React.FC = () => {
               required
               placeholder=""
               onChange={handleChange}
+              className={`border ${
+                passwordError && "password-error"
+              } rounded-md p-2 w-full transition-all duration-200`}
             />
             <label className="block text-sm font-medium mb-1">Password</label>
-            <button
-              type="button"
-              className="absolute right-2 text-gray-400"
-              onClick={togglePasswordVisibility}
-            >
-              {showPassword ? <Eye size={18} /> : <EyeOff size={18} />}
-            </button>
+
+            {/* Show FaTriangleExclamation if passwordError is true, else show Eye/EyeOff */}
+            {passwordError ? (
+              <FaTriangleExclamation
+                className="absolute right-2 text-red-500"
+                size={18}
+              />
+            ) : (
+              <button
+                type="button"
+                className="absolute right-2 text-gray-400"
+                onClick={togglePasswordVisibility}
+              >
+                {showPassword ? <Eye size={18} /> : <EyeOff size={18} />}
+              </button>
+            )}
           </div>
         </div>
 
@@ -198,17 +223,29 @@ const Register: React.FC = () => {
               required
               placeholder=""
               onChange={handleChange}
+              className={`border ${
+                passwordError && "password-error"
+              } rounded-md p-2 w-full transition-all duration-200`}
             />
             <label className="block text-sm font-medium mb-1">
               Confirm Password
             </label>
-            <button
-              type="button"
-              className="absolute right-2 text-gray-400"
-              onClick={togglePasswordVisibility}
-            >
-              {showPassword ? <Eye size={18} /> : <EyeOff size={18} />}
-            </button>
+
+            {/* Show FaTriangleExclamation if passwordError is true, else show Eye/EyeOff */}
+            {passwordError ? (
+              <FaTriangleExclamation
+                className="absolute right-2 text-red-500"
+                size={18}
+              />
+            ) : (
+              <button
+                type="button"
+                className="absolute right-2 text-gray-400"
+                onClick={togglePasswordVisibility}
+              >
+                {showPassword ? <Eye size={18} /> : <EyeOff size={18} />}
+              </button>
+            )}
           </div>
         </div>
 

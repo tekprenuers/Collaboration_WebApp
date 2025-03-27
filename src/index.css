@@ -284,6 +284,11 @@ import "@fontsource/montserrat/700.css";  */
     border-color: #333333;
 }
 
+/* Keep red border when error exists */
+.relative input.password-error {
+    border-color: #ef4444 !important; /* Red */
+}
+
 /*============ Forgot Password ==============*/
 .form{
     position: relative;
@@ -325,6 +330,12 @@ import "@fontsource/montserrat/700.css";  */
 .form input:focus{
     border-color: #333333;
 }
+/* Keep red border when error exists */
+.relative input.password-error {
+    border-color: #ef4444 !important; /* Red */
+}
+
+
 
 
 .custom-gradient {
