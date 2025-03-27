@@ -1,10 +1,7 @@
 import React from "react";
 import {
-  createBrowserRouter,
-  createRoutesFromElements,
   Route,
-  Navigate,
-  RouterProvider,
+  Routes,
 } from "react-router-dom";
 import Login from "./Login/Login";
 import { ToastContainer } from "react-toastify";
@@ -22,39 +19,42 @@ import Learn from "./Components/Learn/Learn";
 import About from "./Components/AboutUs/About";
 
 
-const router = createBrowserRouter(
+const App = () => {
 
-    
-  createRoutesFromElements(
-    <>
-      <Route element={<AuthLayout />}>
-        <Route path="login" element={<Login />} />
-        <Route path="signup" element={<Signup />} />
-        <Route path="forgot-Password" element={<ForgotPassword />} />
-        <Route path="verify-code" element={<VerifyCode />} />
-        <Route path="reset-password" element={<ResetPassword />} />
-      </Route>
-
-      <Route path="/" element={<Home />} />
-      <Route path="template" element={<Templates />} />
-      <Route path="template/:templatePath" element={<TemplateDetails />} /> 
-      <Route path="pricing" element={<Pricing />} />
-      <Route path='learn' element={<Learn />}/>
-      <Route path='about' element={<About />}/>
-
-      {/* Redirect unknown routes to Login */}
-      <Route path="*" element={<Navigate to="/login" replace />} />
-    </>
-  )
-);
-
-const App: React.FC = () => {
   return (
-    <>
-      <RouterProvider router={router} />
+    <div className="">
       <ToastContainer />
-    </>
-  );
+      <Routes>
+        <Route element={<AuthLayout />}>
+          <Route path="login" element={<Login />} />
+          <Route path="signup" element={<Signup />} />
+          <Route path="forgot-Password" element={<ForgotPassword />} />
+          <Route path="verify-code" element={<VerifyCode />} />
+          <Route path="reset-password" element={<ResetPassword />} />
+        </Route>
+
+        <Route path="/" element={<Home />} />
+        <Route path="template" element={<Templates />} />
+        <Route path="template/:templatePath" element={<TemplateDetails />} />
+        <Route path="pricing" element={<Pricing />} />
+        <Route path='learn' element={<Learn />} />
+        <Route path='about' element={<About />} />
+
+        {/* Redirect unknown routes to Login */}
+      </Routes>
+    </div>
+  )
 };
 
-export default App;
+export default App
+
+// const App: React.FC = () => {
+//   return (
+//     <>
+//       <RouterProvider router={router} />
+//       <ToastContainer />
+//     </>
+//   );
+// };
+
+// export default App;

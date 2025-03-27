@@ -102,12 +102,13 @@
 // };
 
 
-import React, {  useState } from "react";
+import React, { useState } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import HLogo from "../assets/vector-illustration/Heady.png";
-import { useAuth } from "../Content/AuthContent";
+import { useAuth } from "../Context/AuthContext";
+import profile from "../assets/vector-illustration/profileimg.jpg"
 
 const NavigationLink = [
   { path: "/", label: "Home" },
@@ -117,14 +118,18 @@ const NavigationLink = [
   { path: "/about", label: "About Us" },
 ];
 
-const { isLoggedIn} = useAuth();
-
 export const Header: React.FC = () => {
-  const navigate = useNavigate();
+  const { token, setToken, navigate } = useAuth()
   const [menuOpen, setMenuOpen] = useState(false);
 
   const handleLogin = () => navigate("/login");
   const handleSignup = () => navigate("/signup");
+
+  const LogOuts = () => {
+    setToken("")
+    localStorage.removeItem("token")
+    navigate("/login")
+  }
 
   return (
     <header className="w-full bg-[#003366] text-white py-4 px-6 flex md:justify-evenly justify-between items-center relative max-w-[1600px] mx-auto">
@@ -153,22 +158,22 @@ export const Header: React.FC = () => {
       </nav>
 
       {/* Login & Signup Buttons */}
-      {isLoggedIn ? <p>pp</p> : (<div className="flex items-center space-x-4">
-        <button onClick={handleLogin} className="hover:text-[#ff5733] hidden md:block">
+      <div className="flex items-center space-x-4">
+        {!token && !localStorage.getItem("token") ? <div className="flex space-x-4"><button onClick={handleLogin} className="hover:text-[#ff5733] hidden md:block">
           Login
         </button>
-        <button
-          onClick={handleSignup}
-          className="bg-white md:flex gap-1 text-[#0B2F59] px-4 py-2 rounded-xl hover:bg-gray-200 hidden"
-        >
-          Sign Up<span className="hidden md:block">Free</span>
-        </button>
+          <button
+            onClick={handleSignup}
+            className="bg-white md:flex gap-1 text-[#0B2F59] px-4 py-2 rounded-xl hover:bg-gray-200 hidden"
+          >
+            Sign Up<span className="hidden md:block">Free</span>
+          </button></div> : <div className="group rounded-full w-[3rem] cursor-pointer relative"><img className="w-full rounded-full" src={profile} alt="" /> <div className="group-hover:block hidden absolute dropdown-menu left-0 pt-4 z-10"> <div className=" bg-gray-100 py-[0.6rem] px-[1rem] z-20 rounded"><button onClick={() => LogOuts()} className={`px-[1.5rem] py-[0.4rem] text-white bg-[#FF5733] rounded`}>Logout</button></div></div></div>}
 
         {/* MOBILE MENU HAMBURGER */}
         <button onClick={() => setMenuOpen(true)} className="md:hidden">
           <Menu />
         </button>
-      </div>)}
+      </div>
 
       {/* Mobile Full-Screen Menu with Smooth Text Disappearance */}
       <AnimatePresence>

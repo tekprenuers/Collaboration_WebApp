@@ -1,11 +1,13 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { EyeOff, Eye } from "lucide-react";
 import { motion } from "framer-motion";
-import { useNavigate } from "react-router-dom";
 import { FcGoogle } from "react-icons/fc";
 import { IoLogoFacebook } from "react-icons/io5";
 import { FaApple } from "react-icons/fa";
-import { AuthLogin } from "../Services/authLoginn"; 
+import axios from "axios";
+import { toast } from "react-toastify";
+import { useAuth } from "../Context/AuthContext";
+
 
 const Login = () => {
   const [showPassword, setShowPassword] = useState(false);
@@ -13,7 +15,8 @@ const Login = () => {
   const [password, setPassword] = useState("");
   const [error, setError] = useState<string | null>(null);
   const [loading, setLoading] = useState(false);
-  const navigate = useNavigate();
+
+  const { token, setToken, navigate, backendUrl } = useAuth();
 
   const togglePasswordVisibility = () => {
     setShowPassword(!showPassword);
@@ -25,22 +28,29 @@ const Login = () => {
     setLoading(true);
 
     try {
-      const loginData = { email, password };
-      const response = await AuthLogin(loginData);
 
-      console.log("Login successful! Response:", response);
-
-      // Redirect to dashboard or another page
-      navigate("/");
-    } catch (err: any) {
-      console.error("Login failed! Error:", err);
-      setError(err.message || "Login failed. Please try again.");
-    } finally {
-      setLoading(false);
+      const response = await axios.post(backendUrl + "/user/login", { email, password })
+      console.log(response.data)
+      if (response.data.success) {
+        setToken(response.data.token);
+        localStorage.setItem("token", response.data.token);
+        toast.success("Login Successful");
+      } else {
+        toast.error(response.data.message);
+      }
+    } catch (error: any) {
+      console.log(error);
+      setError(error.message || "Login failed. Please try again.");
     }
   };
 
- 
+  useEffect(() => {
+    if (token) {
+      navigate("/");
+    }
+  }, [token])
+
+
 
   // const handleSubmit = async (e: React.FormEvent) => {
   //   e.preventDefault();
@@ -99,7 +109,8 @@ const Login = () => {
               id="email"
               required
               placeholder=""
-              onChange={(e) => { setEmail(e.target.value) }}
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
             />
             <label className="block text-sm font-medium mb-1">
               Email
@@ -116,7 +127,8 @@ const Login = () => {
               id="password"
               required
               placeholder=""
-              onChange={(e) => { setPassword(e.target.value) }}
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
             />
             <label className="block text-sm font-medium mb-1">Password</label>
             <button
